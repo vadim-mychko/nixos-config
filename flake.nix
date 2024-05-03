@@ -16,8 +16,8 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          home-manager.nixosModules.home-manager
           ./hosts/vivobook
+          home-manager.nixosModules.home-manager
         ];
       };
     };
