@@ -16,11 +16,11 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./hosts/vivobook
+          ./hosts/vivobook/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPkgs = true;
-            home-manager.vadimm = import ./home; 
+            home-manager.mychkvad = import ./home/mychkvad.nix; 
           }
         ];
       };
