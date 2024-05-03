@@ -14,10 +14,14 @@
     nixosConfigurations = {
       vivobook = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = inputs
         modules = [
           ./hosts/vivobook
-          home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPkgs = true;
+            home-manager.vadimm = import ./home; 
+          }
         ];
       };
     };
