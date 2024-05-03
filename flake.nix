@@ -10,11 +10,15 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       vivobook = nixpkgs.lib.nixosSystem {
-        modules = [ ./hosts/vivobook ];
+        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
+        modules = [
+          home-manager.nixosModules.home-manager
+          ./hosts/vivobook
+        ];
       };
     };
   };
