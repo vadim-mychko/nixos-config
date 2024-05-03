@@ -1,5 +1,5 @@
 {
-  description = "Nixos config flake";
+  description = "NixOS Configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
@@ -11,12 +11,11 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+    nixosConfigurations = {
+      vivobook = lib.nixosSystem {
+        modules = [ ./hosts/vivobook ];
+        specialArgs = { inherit inputs; };
+      };
     };
   };
 }
