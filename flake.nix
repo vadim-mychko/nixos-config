@@ -12,7 +12,7 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
-      vivobook = lib.nixosSystem {
+      vivobook = nixpkgs.lib.nixosSystem {
         modules = [ ./hosts/vivobook ];
         specialArgs = { inherit inputs; };
       };
