@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   boot.loader.systemd-boot.enable = true;
