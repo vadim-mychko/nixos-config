@@ -45,17 +45,6 @@
     pulse.enable = true;
   };
 
-  users.users.vadimm = {
-    isNormalUser = true;
-    description = "Vadim Mychko";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      git
-      vim
-    ];
-  };
-  
   users.users.mychkvad = {
     isNormalUser = true;
     description = "Vadim Mychko";
