@@ -45,15 +45,16 @@
     pulse.enable = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    firefox
+    git
+    vim
+  ];
+
   users.users.mychkvad = {
     isNormalUser = true;
     description = "Vadim Mychko";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      git
-      vim
-    ];
   };
 
   nixpkgs.config.allowUnfree = true;
