@@ -19,7 +19,7 @@
           ./hosts/vivobook/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
-            home-manager.useUserPkgs = true;
+            home-manager.useUserPackages = true;
             home-manager.users.mychkvad = import ./home/mychkvad.nix; 
           }
         ];
