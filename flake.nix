@@ -20,7 +20,7 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPkgs = true;
-            home-manager.mychkvad = import ./home/mychkvad.nix; 
+            home-manager.users.mychkvad = import ./home/mychkvad.nix; 
           }
         ];
       };
