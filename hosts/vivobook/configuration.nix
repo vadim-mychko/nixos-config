@@ -53,6 +53,7 @@
     git
     vim
     lshw
+    vscode
   ];
 
   users.users.mychkvad = {
