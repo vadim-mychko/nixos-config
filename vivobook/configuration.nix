@@ -38,7 +38,7 @@
       monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
       serif = [ "Noto Serif" ];
       sansSerif = [ "Noto Sans" ];
-      emoji = [ "Noto Color Emoji" ]
+      emoji = [ "Noto Color Emoji" ];
     };
   };
 
