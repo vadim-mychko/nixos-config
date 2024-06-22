@@ -1,12 +1,10 @@
 { pkgs, ... }:
 
 {
-  users.defaultUserShell=pkgs.zsh; 
+  users.defaultUserShell = pkgs.zsh; 
 
   programs.zsh = {
     enable = true;
-    ohMyZsh = {
-      enable = true;
-    };
+    ohMyZsh.enable = true;
   };
 }

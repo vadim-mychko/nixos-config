@@ -52,6 +52,7 @@
   environment.systemPackages = with pkgs; [
     firefox
     git
+    stow
     vim
     vscode
     telegram-desktop
