@@ -5,9 +5,6 @@
 
   programs.zsh = {
     enable = true;
-    ohMyZsh = {
-      enable = true;
-      theme = "agnoster";
-    };
+    ohMyZsh.enable = true;
   };
 }
