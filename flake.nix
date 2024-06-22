@@ -12,8 +12,7 @@
         specialArgs = inputs;
         modules = [
           ./hosts/vivobook/configuration.nix
-          ./modules/git
-          ./modules/nvidia
+          ./modules/nvidia.nix
         ];
       };
     };
