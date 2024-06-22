@@ -4,9 +4,9 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userName = "Vadim Mychko";
-    userEmail = "vadim_mychko@proton.me";
-    extraConfig = {
+    config = {
+      user.name = "Vadim Mychko";
+      user.email = "vadim_mychko@proton.me";
       init = { defaultBranch = "main"; };
     };
   };
