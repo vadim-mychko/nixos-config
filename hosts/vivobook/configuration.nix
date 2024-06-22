@@ -31,12 +31,22 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   services.printing.enable = true;
+
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+    config = {
+      user.name = "Vadim Mychko";
+      user.email = "vadim_mychko@proton.me";
+      init = { defaultBranch = "main"; };
+    };
+  };
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -86,5 +96,5 @@
     };
   };
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
