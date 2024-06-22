@@ -54,6 +54,7 @@
     vim
     lshw
     vscode
+    telegram-desktop
   ];
 
   users.users.mychkvad = {
@@ -87,4 +88,3 @@
 
   system.stateVersion = "23.11";
 }
-
