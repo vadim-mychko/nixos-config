@@ -12,7 +12,8 @@
         specialArgs = inputs;
         modules = [
           ./hosts/vivobook/configuration.nix
-          ./modules/git ];
+          ./modules/git
+        ];
       };
     };
   };
