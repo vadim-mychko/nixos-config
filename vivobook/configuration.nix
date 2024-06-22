@@ -29,6 +29,7 @@
 
   environment.systemPackages = with pkgs; [
     firefox
+    neofetch
     vscode
     telegram-desktop
   ];
