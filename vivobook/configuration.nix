@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -6,6 +6,7 @@
     ./nvidia.nix
     ./git.nix
     ./zsh.nix
+    ./gc.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
