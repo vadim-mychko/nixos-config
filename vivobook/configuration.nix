@@ -35,7 +35,7 @@
     ];
 
     fontconfig.defaultFonts = {
-      monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
+      monospace = [ "Meslo LG M Nerd Font Mono" ];
       serif = [ "Noto Serif" ];
       sansSerif = [ "Noto Sans" ];
       emoji = [ "Noto Color Emoji" ];
