@@ -10,5 +10,9 @@
     extraConfigBeforePlugins = ''
       ${builtins.readFile ./before.conf}
     '';
+
+    extraConfig = ''
+      ${builtins.readFile ./after.conf}
+    '';
   };
 }
