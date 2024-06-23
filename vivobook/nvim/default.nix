@@ -9,7 +9,7 @@
 
     configure.myVimPackage = with pkgs.vimPlugins; {
       start = [
-
+        catppuccin-nvim
       ];
     };
 
