@@ -4,13 +4,13 @@
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
-    ./zsh.nix
     ./git.nix
     ./gc.nix
     ./locale.nix
     ./pipewire.nix
     ./fonts.nix
 
+    ./zsh
     ./tmux
   ];
 
