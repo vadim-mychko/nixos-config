@@ -3,6 +3,10 @@
 {
   programs.tmux = {
     enable = true;
+    terminal = "tmux-256color";
+    baseIndex = 1;
+    keyMode = "vi";
+
     plugins = with pkgs.tmuxPlugins; [
       catppuccin
     ];
