@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.neovim = {
@@ -6,9 +6,12 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    plugins = [
 
-    ];
+    configure.myVimPackage = with pkgs.vimPlugins; {
+      start = [
+
+      ];
+    };
 
     configure.customRC = ''
       lua << EOF
