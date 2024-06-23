@@ -5,6 +5,8 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ./zsh.nix
+    ./git.nix
+    ./tmux.nix
     ./gc.nix
     ./locale.nix
     ./pipewire.nix
@@ -30,8 +32,6 @@
   environment.systemPackages = with pkgs; [
     firefox
     neofetch
-    tmux
-    git
     foot
     vscode
     telegram-desktop
