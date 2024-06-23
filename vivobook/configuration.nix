@@ -4,7 +4,6 @@
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
-    ./git.nix
     ./zsh.nix
     ./gc.nix
     ./locale.nix
@@ -31,6 +30,8 @@
   environment.systemPackages = with pkgs; [
     firefox
     neofetch
+    tmux
+    git
     foot
     vscode
     telegram-desktop
