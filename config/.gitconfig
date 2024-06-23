@@ -1,0 +1,6 @@
+[user]
+    name = Vadim Mychko
+    email = vadim_mychko@proton.me
+
+[init]
+    defaultBranch = main
