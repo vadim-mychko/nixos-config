@@ -7,7 +7,7 @@
     enable = true;
     ohMyZsh.enable = true;
     promptInit = ''
-      ${builtins.readFile ./.zshrc}
+      ${builtins.readFile ./prompt.sh}
     '';
   };
 }
