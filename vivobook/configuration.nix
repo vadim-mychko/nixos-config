@@ -6,11 +6,12 @@
     ./nvidia.nix
     ./zsh.nix
     ./git.nix
-    ./tmux.nix
     ./gc.nix
     ./locale.nix
     ./pipewire.nix
     ./fonts.nix
+
+    ./tmux
   ];
 
   boot.loader.systemd-boot.enable = true;
