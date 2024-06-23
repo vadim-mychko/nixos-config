@@ -12,6 +12,7 @@
 
     ./zsh
     ./tmux
+    ./nvim
   ];
 
   boot.loader.systemd-boot.enable = true;
