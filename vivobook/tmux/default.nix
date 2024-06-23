@@ -8,6 +8,7 @@
     keyMode = "vi";
     shortcut = "a";
     escapeTime = 0;
+    historyLimit = 10000;
 
     plugins = with pkgs.tmuxPlugins; [
       catppuccin
