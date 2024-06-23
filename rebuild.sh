@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 
-SCRIPT_PATH=$(realpath "$0")
-SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
-
-sudo nixos-rebuild switch --flake $SCRIPT_DIR#vivobook
+DIR=$(dirname $(realpath "$0"))
+sudo nixos-rebuild switch --flake $DIR#vivobook
