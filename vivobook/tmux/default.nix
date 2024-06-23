@@ -8,7 +8,7 @@
     ];
 
     extraConfigBeforePlugins = ''
-      set -g @catppuccin_flavour 'mocha'
+      ${builtins.readFile ./before.conf}
     '';
   };
 }
