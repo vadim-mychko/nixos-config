@@ -10,6 +10,15 @@
     ./tmux
   ];
 
+  # ================================ PACKAGES =================================
+
+  environment.systemPackages = with pkgs; [
+    firefox
+    vscode
+    telegram-desktop
+    foot
+  ];
+
   # ================================= LOCALE ==================================
 
   time.timeZone = "Europe/Prague";
@@ -87,15 +96,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  # ================================ PACKAGES =================================
-
-  environment.systemPackages = with pkgs; [
-    firefox
-    vscode
-    telegram-desktop
-    foot
-  ];
 
   # ============================== MISCELLANEOUS ==============================
 
