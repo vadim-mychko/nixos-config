@@ -94,6 +94,7 @@
     firefox
     vscode
     telegram-desktop
+    foot
   ];
 
   # ============================== MISCELLANEOUS ==============================
