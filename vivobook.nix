@@ -1,7 +1,10 @@
 { pkgs, config, ... }:
 
 {
-  imports = [ ./vivobook-hardware.nix ];
+  imports = [
+    ./vivobook-hardware.nix
+    ./zsh
+  ];
 
   # ================================= LOCALE ==================================
 
@@ -103,7 +106,6 @@
       imports = [
         ./nvim
         ./foot
-        ./zsh
         ./git
       ];
     };
@@ -126,8 +128,6 @@
     layout = "us";
     variant = "";
   };
-
-  users.defaultUserShell = pkgs.zsh;
 
   users.users.mychkvad = {
     isNormalUser = true;

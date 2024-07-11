@@ -1,9 +1,11 @@
 { ... }:
 
 {
+  users.defaultUserShell = pkgs.zsh;
+
   programs.zsh = {
     enable = true;
-    oh-my-zsh.enable = true;
-    initExtra = builtins.readFile ./prompt.sh;
+    ohMyZsh.enable = true;
+    promptInit = builtins.readFile ./prompt.sh;
   };
 }
