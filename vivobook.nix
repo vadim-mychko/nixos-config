@@ -108,6 +108,7 @@
         ./foot
         ./git
         ./tmux
+        ./sway
       ];
     };
   };
