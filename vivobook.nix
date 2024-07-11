@@ -1,10 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  imports = [
-    ./vivobook-hardware.nix
-    ./zsh
-  ];
+  imports = [ ./vivobook-hardware.nix ];
 
   # ================================= LOCALE ==================================
 
@@ -84,19 +81,6 @@
     pulse.enable = true;
   };
 
-  # =================================== GIT ===================================
-
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
-
-    config = {
-      user.name = "Vadim Mychko";
-      user.email = "vadim_mychko@proton.me";
-      init.defaultBranch = "main";
-    };
-  };
-
   # ================================ PACKAGES =================================
 
   environment.systemPackages = with pkgs; [
@@ -119,6 +103,8 @@
       imports = [
         ./nvim
         ./foot
+        ./zsh
+        ./git
       ];
     };
   };
@@ -140,6 +126,8 @@
     layout = "us";
     variant = "";
   };
+
+  users.defaultUserShell = pkgs.zsh;
 
   users.users.mychkvad = {
     isNormalUser = true;

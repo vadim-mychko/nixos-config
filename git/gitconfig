@@ -1,0 +1,6 @@
+[user]
+    email = "vadim_mychko@proton.me"
+    name = "Vadim Mychko"
+
+[init]
+    defaultBranch = "main"
