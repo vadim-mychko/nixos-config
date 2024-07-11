@@ -59,13 +59,14 @@
 
   fonts = {
     packages = with pkgs; [
+      fira
       noto-fonts
       noto-fonts-color-emoji
-      (nerdfonts.override { fonts = [ "Meslo" ]; })
     ];
 
+    fontconfig.enable = true;
     fontconfig.defaultFonts = {
-      monospace = [ "Meslo LG M Nerd Font Mono" ];
+      monospace = [ "Fira Mono" ];
       serif = [ "Noto Serif" ];
       sansSerif = [ "Noto Sans" ];
       emoji = [ "Noto Color Emoji" ];
