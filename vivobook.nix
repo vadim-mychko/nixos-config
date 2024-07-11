@@ -4,8 +4,6 @@
   imports = [
     ./vivobook-hardware.nix
     ./zsh
-    ./tmux
-    ./nvim
   ];
 
   # ================================= LOCALE ==================================
@@ -119,7 +117,8 @@
       programs.home-manager.enable = true;
 
       imports = [
-        
+        ./nvim
+        ./foot
       ];
     };
   };

@@ -7,14 +7,12 @@
     viAlias = true;
     vimAlias = true;
 
-    configure.myVimPackage = with pkgs.vimPlugins; {
-      start = [
-        catppuccin-nvim
-      ];
-    };
+    plugins = with pkgs.vimPlugins; [
+      modus-themes-nvim
+    ];
 
-    configure.customRC = ''
-      lua << EOF
+    extraLuaConfig = ''
+      ${builtins.readFile ./init.lua}
     '';
   };
 }
