@@ -7,10 +7,13 @@
     viAlias = true;
     vimAlias = true;
 
-    configure.packages.myVimPackage = with pkgs.vimPlugins; {
-      start = [
-        modus-themes-nvim
-      ];
-    };
+    configure.customRC = ''
+      lua << EOF
+      ${builtins.readFile ./init.lua}
+    '';
+
+    configure.packages.myVimPackage.start = with pkgs.vimPlugins; [
+      modus-themes-nvim
+    ];
   };
 }
