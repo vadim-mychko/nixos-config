@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       vivobook = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
