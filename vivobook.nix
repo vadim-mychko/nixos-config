@@ -5,6 +5,9 @@
     ./vivobook-hardware.nix
     ./zsh
     ./sway
+    ./git
+    ./nvim
+    ./tmux
   ];
 
   # ================================= LOCALE ==================================
@@ -92,26 +95,6 @@
     vscode
     telegram-desktop
   ];
-
-  # ============================== HOME MANAGER ===============================
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.mychkvad = { ... } : {
-      home.username = "mychkvad";
-      home.homeDirectory = "/home/mychkvad";
-      home.stateVersion = "24.05";
-      programs.home-manager.enable = true;
-
-      imports = [
-        ./nvim
-        ./foot
-        ./git
-        ./tmux
-      ];
-    };
-  };
 
   # ============================== MISCELLANEOUS ==============================
 
