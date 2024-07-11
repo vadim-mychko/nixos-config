@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       main = {
-        shell = "bash";
+        shell = "zsh";
         term = "foot";
         font = "Fira Mono:size=10, Noto Color Emoji:size=10";
         initial-window-mode = "maximized";
