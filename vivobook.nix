@@ -4,6 +4,7 @@
   imports = [
     ./vivobook-hardware.nix
     ./zsh
+    ./sway
   ];
 
   # ================================= LOCALE ==================================
@@ -108,7 +109,6 @@
         ./foot
         ./git
         ./tmux
-        ./sway
       ];
     };
   };
