@@ -103,10 +103,22 @@
 
   environment.systemPackages = with pkgs; [
     firefox
-    neofetch
     vscode
     telegram-desktop
   ];
+
+  # ============================== HOME MANAGER ===============================
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.mychkvad = { ... } : {
+      home.username = "mychkvad";
+      home.homeDirectory = "/home/mychkvad";
+      home.stateVersion = "24.05";
+      programs.home-manager.enable = true;
+    };
+  };
 
   # ============================== MISCELLANEOUS ==============================
 
