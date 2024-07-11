@@ -107,6 +107,7 @@
         ./nvim
         ./foot
         ./git
+        ./tmux
       ];
     };
   };
