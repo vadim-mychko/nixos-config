@@ -7,6 +7,8 @@
   programs.zsh = {
     enable = true;
 
+    interactiveShellInit = builtins.readFile ./instant-prompt.zsh
+
     promptInit = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       ${builtins.readFile ./prompt.zsh}
