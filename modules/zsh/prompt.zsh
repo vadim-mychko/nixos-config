@@ -103,6 +103,13 @@
   # Blue current directory.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
 
+  # Make the current directory in bold.
+  # https://github.com/romkatv/powerlevel10k/issues/1063
+  POWERLEVEL9K_DIR_ANCHOR_BOLD=false
+  unset POWERLEVEL9K_DIR_ANCHOR_FOREGROUND
+  unset POWERLEVEL9K_DIR_SHORTENED_FOREGROUND
+  POWERLEVEL9K_DIR_CONTENT_EXPANSION='%B$P9K_CONTENT%b'
+
   # Context format when root: user@host. The first part white, the rest grey.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}%n%f%F{$grey}@%m%f"
   # Context format when not root: user@host. The whole thing grey.
