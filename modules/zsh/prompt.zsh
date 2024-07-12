@@ -40,6 +40,7 @@
   # Prompt colors.
   local grey='242'
   local red='1'
+  local green='2'
   local yellow='3'
   local blue='4'
   local magenta='5'
@@ -127,7 +128,7 @@
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$yellow
 
   # Grey Git prompt. This makes stale prompts indistinguishable from up-to-date ones.
-  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$grey
+  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$green
 
   # Disable async loading indicator to make directories that aren't Git repositories
   # indistinguishable from large Git repositories without known state.
