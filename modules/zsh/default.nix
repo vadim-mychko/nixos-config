@@ -2,14 +2,12 @@
 
 {
   users.defaultUserShell = pkgs.zsh;
+  environment.systemPackages = [ pkgs.zsh-powerlevel10k ];
 
   programs.zsh = {
     enable = true;
-  };
-
-  programs.starship = {
-    enable = true;
-    interactiveOnly =  true;
-    settings = builtins.fromTOML (builtins.readFile ./starship.toml);
+    promptInit = ''
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+    '';
   };
 }
