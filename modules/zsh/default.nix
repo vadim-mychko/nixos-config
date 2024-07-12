@@ -6,8 +6,11 @@
 
   programs.zsh = {
     enable = true;
-    promptInit = ''
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-    '';
+    # interactiveShellInit = ''
+    #   source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+    #   ${builtin.readFile ./instant-prompt.sh}
+    # ''; 
+
+    # promptInit = builtin.readFile ./prompt.sh;
   };
 }
