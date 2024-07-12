@@ -127,7 +127,7 @@
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
   typeset -g POWERLEVEL9K_VCS_COMMIT_ICON=
   typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED}_ICON=
-  typeset -g POWERLEVEL9K_VCS_DIRTY_ICON='%B*%b'
+  typeset -g POWERLEVEL9K_VCS_DIRTY_ICON='*'
   typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='$P9K_CONTENT'
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
