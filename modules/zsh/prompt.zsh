@@ -104,13 +104,6 @@
   # Blue current directory.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
 
-  # Make the current directory in bold.
-  # https://github.com/romkatv/powerlevel10k/issues/1063
-  POWERLEVEL9K_DIR_ANCHOR_BOLD=false
-  unset POWERLEVEL9K_DIR_ANCHOR_FOREGROUND
-  unset POWERLEVEL9K_DIR_SHORTENED_FOREGROUND
-  POWERLEVEL9K_DIR_CONTENT_EXPANSION='%B$P9K_CONTENT%b'
-
   # Context format when root: user@host. The first part white, the rest grey.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}%n%f%F{$grey}@%m%f"
   # Context format when not root: user@host. The whole thing grey.
@@ -129,19 +122,11 @@
   # asynchronously when Git state changes.
   typeset -g POWERLEVEL9K_VCS_MAX_SYNC_LATENCY_SECONDS=0
 
-  # Don't show remote branch, current tag or stashes.
   typeset -g POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked)
-  # Don't show the branch icon.
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
-  # When in detached HEAD state, show @commit where branch normally goes.
   typeset -g POWERLEVEL9K_VCS_COMMIT_ICON=
-  # Don't show staged, unstaged, untracked indicators.
   typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED}_ICON=
-  # Show '*' when there are staged, unstaged or untracked files.
   typeset -g POWERLEVEL9K_VCS_DIRTY_ICON='*'
-  # Don't show the number of commits next to the ahead/behind arrows.
-  typeset -g POWERLEVEL9K_VCS_{COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=1
-  # Remove space between '⇣' and '⇡' and all trailing spaces.
   typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='$P9K_CONTENT'
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
