@@ -22,8 +22,16 @@ style = "bold green"
 format = "[$hash]($style)"
 
 [git_status]
-format = "[*]($style) "
-style = 'bold green'
+format = "[(*$all_status)]($style)"
+style = "bold green"
+conflicted = "​"
+stashed = ""
+deleted = "​"
+renamed = "​"
+modified = "​"
+typechanged = ""
+staged = "​"
+untracked = "​"
 
 [fill]
 symbol = " "
