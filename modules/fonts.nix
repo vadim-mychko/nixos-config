@@ -9,7 +9,6 @@
       meslo-lgs-nf
     ];
 
-    fontconfig.enable = true;
     fontconfig.defaultFonts = {
       monospace = [ "Fira Mono" "MesloLGS NF" ];
       serif = [ "Noto Serif" ];
