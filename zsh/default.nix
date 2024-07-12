@@ -2,10 +2,13 @@
 
 {
   users.defaultUserShell = pkgs.zsh;
-
   programs.zsh = {
     enable = true;
-    ohMyZsh.enable = true;
-    promptInit = builtins.readFile ./prompt.sh;
+  };
+
+  programs.starship = {
+    enable = true;
+    interactiveOnly =  true;
+    settings = builtins.fromTOML (builtins.readFile ./starship.toml);
   };
 }
