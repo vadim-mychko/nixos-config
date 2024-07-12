@@ -10,7 +10,7 @@
       vivobook = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
-        modules = [ ./vivobook.nix ];
+        modules = [ ./hosts/vivobook/configuration.nix ];
       };
     };
   };

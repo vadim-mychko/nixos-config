@@ -2,12 +2,14 @@
 
 {
   imports = [
-    ./vivobook-hardware.nix
-    ./zsh
-    ./sway
-    ./git
-    ./nvim
-    ./tmux
+    ./hardware-configuration.nix
+
+    ../../modules/git.nix
+
+    ../../modules/zsh
+    ../../modules/sway
+    ../../modules/nvim
+    ../../modules/tmux
   ];
 
   # ================================ PACKAGES =================================
