@@ -1,5 +1,5 @@
 format = """
-$directory$git_branch$git_commit$git_status$fill$time
+$directory$git_branch$git_commit$git_status
 $character
 """
 
@@ -33,16 +33,7 @@ typechanged = ""
 staged = "​"
 untracked = "​"
 
-[fill]
-symbol = " "
-
-[time]
-disabled = false
-format = " [$time]($style)"
-time_format = "%R"
-style = "white"
-
 [character]
 format = "$symbol "
-success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red)"
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
