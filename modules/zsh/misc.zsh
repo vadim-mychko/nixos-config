@@ -1,6 +1,7 @@
 # ============================== AUTO COMPLETION ==============================
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'r:|?=** m:{a-z\-}={A-Z\_}'
 zstyle ':completion:*' menu select
+_comp_options+=(globdots)
 
 # ================================= VIM MODE ==================================
 bindkey -v
