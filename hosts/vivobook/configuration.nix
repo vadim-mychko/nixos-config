@@ -20,6 +20,7 @@
     pciutils
     libva-utils
     glxinfo
+    btop
   ];
 
   # ================================= LOCALE ==================================
@@ -102,15 +103,19 @@
     LIBVA_DRIVER_NAME = "iHD";
   };
 
-  boot.initrd.kernelModules = [ "xe" ];
-  boot.kernelParams = [ "i915.force_probe=!46a6" "xe.force_probe=46a6" ];
   services.xserver.videoDrivers = [ "nvidia" ];
+  boot.initrd.kernelModules = [ "xe" ];
+  boot.kernelParams = [
+    "i915.force_probe=!46a6"
+    "xe.force_probe=46a6"
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+  ];
 
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = true;
-    open = true;
+    open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {
