@@ -83,24 +83,22 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-vaapi-driver
-      intel-media-driver
       vpl-gpu-rt
     ];
 
     enable32Bit = true;
     extraPackages32 = with pkgs; [
       intel-vaapi-driver
-      intel-media-driver
       vpl-gpu-rt
     ];
   };
 
-  boot.initrd.kernelModules = [ "xe" ];
-  services.xserver.videoDrivers = [ "nvidia" ];
-
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
   };
+
+  boot.initrd.kernelModules = [ "xe" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
