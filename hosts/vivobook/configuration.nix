@@ -17,6 +17,8 @@
     vscode
     telegram-desktop
     foot
+    pciutils
+    libva-utils
   ];
 
   # ================================= LOCALE ==================================
