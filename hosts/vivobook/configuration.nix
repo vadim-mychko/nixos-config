@@ -74,12 +74,32 @@
   };
 
   # ============================= HARDWARE TWEAKS =============================
-
-  services.xserver.videoDrivers = [ "nvidia" ];
+  # [1] https://nixos.wiki/wiki/Accelerated_Video_Playback
+  # [2] https://nixos.wiki/wiki/Intel_Graphics
+  # [3] https://nixos.wiki/wiki/Nvidia
+  # [4] https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/intel/default.nix
 
   hardware.graphics = {
     enable = true;
+    extraPackages = with pkgs; [
+      intel-vaapi-driver
+      intel-media-driver
+      vpl-gpu-rt
+    ];
+
     enable32Bit = true;
+    extraPackages32 = with pkgs; [
+      intel-vaapi-driver
+      intel-media-driver
+      vpl-gpu-rt
+    ];
+  };
+
+  boot.initrd.kernelModules = [ "xe" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
   };
 
   hardware.nvidia = {
