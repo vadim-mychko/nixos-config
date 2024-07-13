@@ -11,7 +11,6 @@
     enable = true;
     interactiveShellInit = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      ${builtins.readFile ./instant-prompt.zsh}
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
       ${builtins.readFile ./prompt.zsh}
       ${builtins.readFile ./aliases.zsh}
