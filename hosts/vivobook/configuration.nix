@@ -17,10 +17,6 @@
     vscode
     telegram-desktop
     foot
-    pciutils
-    libva-utils
-    glxinfo
-    btop
     fastfetch
   ];
 
