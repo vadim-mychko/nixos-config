@@ -19,6 +19,7 @@
     foot
     pciutils
     libva-utils
+    glxinfo
   ];
 
   # ================================= LOCALE ==================================
@@ -80,6 +81,8 @@
   # [2] https://nixos.wiki/wiki/Intel_Graphics
   # [3] https://nixos.wiki/wiki/Nvidia
   # [4] https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/intel/default.nix
+  # [5] https://wiki.archlinux.org/title/intel_graphics#Testing_the_new_experimental_Xe_driver
+  # [6] https://wiki.hyprland.org/Nvidia/#suspendwakeup-issues
 
   hardware.graphics = {
     enable = true;
@@ -100,13 +103,14 @@
   };
 
   boot.initrd.kernelModules = [ "xe" ];
+  boot.kernelParams = [ "i915.force_probe=!46a6" "xe.force_probe=46a6" ];
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = false;
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {
