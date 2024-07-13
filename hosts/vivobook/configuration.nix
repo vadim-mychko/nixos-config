@@ -80,6 +80,7 @@
   # [2] https://nixos.wiki/wiki/Intel_Graphics
   # [3] https://nixos.wiki/wiki/Nvidia
   # [4] https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/intel/default.nix
+  # [5] https://wiki.hyprland.org/Nvidia/#suspendwakeup-issues
 
   hardware.graphics = {
     enable = true;
@@ -98,12 +99,13 @@
   };
 
   boot.initrd.kernelModules = [ "xe" ];
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
