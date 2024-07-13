@@ -79,12 +79,17 @@
   };
 
   # ============================= HARDWARE TWEAKS =============================
+  #  CPU: Intel i7-12700H 12th Generation (Alder Lake)
+  # iGPU: Intel Iris Xe Graphics
+  #  GPU: Nvidia GeForce RTX 2050
+  # ===========================================================================
   # [1] https://nixos.wiki/wiki/Accelerated_Video_Playback
   # [2] https://nixos.wiki/wiki/Intel_Graphics
   # [3] https://nixos.wiki/wiki/Nvidia
   # [4] https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/intel/default.nix
   # [5] https://wiki.archlinux.org/title/intel_graphics#Testing_the_new_experimental_Xe_driver
   # [6] https://wiki.hyprland.org/Nvidia/#suspendwakeup-issues
+  # ===========================================================================
 
   hardware.graphics = {
     enable = true;
