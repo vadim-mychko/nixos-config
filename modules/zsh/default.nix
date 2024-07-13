@@ -7,12 +7,6 @@
     zsh-fzf-tab
   ];
 
-  # ================================= SOURCES =================================
-  # [1] https://youtu.be/ud7YxC33Z3w?si=0XJlozgWevORbcph
-  # [2] https://stackoverflow.com/a/24237590
-  # [3] https://unix.stackexchange.com/a/97844
-  # ===========================================================================
-
   programs.zsh = {
     enable = true;
     interactiveShellInit = ''

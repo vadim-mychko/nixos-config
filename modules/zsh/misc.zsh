@@ -1,3 +1,4 @@
+# https://youtu.be/ud7YxC33Z3w?si=0XJlozgWevORbcph
 # ============================== AUTO COMPLETION ==============================
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"

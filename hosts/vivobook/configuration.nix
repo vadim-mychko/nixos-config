@@ -82,7 +82,7 @@
   #  CPU: Intel i7-12700H 12th Generation (Alder Lake)
   # iGPU: Intel Iris Xe Graphics
   #  GPU: Nvidia GeForce RTX 2050
-  # ================================= SOURCES =================================
+  # ===========================================================================
   # [1] https://nixos.wiki/wiki/Accelerated_Video_Playback
   # [2] https://nixos.wiki/wiki/Intel_Graphics
   # [3] https://nixos.wiki/wiki/Nvidia
