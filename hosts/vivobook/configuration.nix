@@ -17,7 +17,11 @@
     vscode
     telegram-desktop
     foot
-    fastfetch
+    zoxide
+    fzf
+    fd
+    jq
+    ripgrep
   ];
 
   # ================================= LOCALE ==================================

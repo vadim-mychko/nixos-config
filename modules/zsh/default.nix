@@ -12,7 +12,6 @@
       highlightStyle = "fg=15";
     };
 
-    shellAliases = {};
     interactiveShellInit = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       ${builtins.readFile ./prompt.zsh}
