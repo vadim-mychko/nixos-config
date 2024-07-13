@@ -2,9 +2,9 @@
 
 # Array of color names
 color_names=(
-    "Black" "Red" "Green" "Yellow" "Blue" "Magenta" "Cyan" "White" "Bright Black"
-    "Bright Red" "Bright Green" "Bright Yellow" "Bright Blue" "Bright Magenta"
-    "Bright Cyan" "Bright White" "Extended 16" "Extended 17"
+    "Black" "Red" "Green" "Yellow" "Blue" "Magenta" "Cyan" "White"
+    "Bright Black" "Bright Red" "Bright Green" "Bright Yellow"
+    "Bright Blue" "Bright Magenta" "Bright Cyan" "Bright White"
 )
 
 for i in {0..15}; do
