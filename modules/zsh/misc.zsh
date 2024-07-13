@@ -1,10 +1,12 @@
-# https://youtu.be/ud7YxC33Z3w?si=0XJlozgWevORbcph
+# [1] https://youtu.be/ud7YxC33Z3w?si=0XJlozgWevORbcph
+# [2] https://stackoverflow.com/a/24237590
 # ============================== AUTO COMPLETION ==============================
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+_comp_options+=(globdots)
 
 # ================================== HISTORY ==================================
 HISTSIZE=10000
