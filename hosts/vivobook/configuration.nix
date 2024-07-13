@@ -3,7 +3,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./nvidia.nix
     ../../modules/git.nix
     ../../modules/zsh
     ../../modules/sway
