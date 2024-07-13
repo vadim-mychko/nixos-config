@@ -7,7 +7,7 @@ color_names=(
     "Bright Cyan" "Bright White" "Extended 16" "Extended 17"
 )
 
-for i in {0..17}; do
+for i in {0..15}; do
     if [ $i -lt 10 ]; then
         index=" $i"  # Add a leading space for single-digit numbers
     else
