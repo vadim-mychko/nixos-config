@@ -110,12 +110,7 @@
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  boot.initrd.kernelModules = [ "xe" ];
-  boot.kernelParams = [
-    "i915.force_probe=!46a6"
-    "xe.force_probe=46a6"
-    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-  ];
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
