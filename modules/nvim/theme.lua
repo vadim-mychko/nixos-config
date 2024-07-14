@@ -28,3 +28,5 @@ require("modus-themes").setup({
 	---@param colors ColorScheme
 	on_highlights = function(highlights, colors) end,
 })
+
+vim.cmd.colorscheme modus
