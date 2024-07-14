@@ -20,7 +20,7 @@ vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 vim.opt.cursorline = true
-vim.opt.scrolloff = 20
+vim.opt.scrolloff = 21
 vim.opt.guicursor = ""
 vim.opt.hlsearch = true
 
