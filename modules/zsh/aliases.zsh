@@ -1,8 +1,6 @@
 alias vi='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias find='fd'
-alias grep='rg'
 
 alias ga='git add'
 alias gs='git status'
