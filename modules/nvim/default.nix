@@ -6,6 +6,13 @@
     nil
   ];
 
+  # ===========================================================================
+  # [1] https://github.com/miikanissi/modus-themes.nvim
+  # [2] https://github.com/neovim/nvim-lspconfig
+  # [3] https://github.com/nvim-treesitter/nvim-treesitter
+  # [4] https://github.com/nvim-telescope/telescope.nvim/
+  # ===========================================================================
+
   programs.neovim = {
     enable = true;
     configure.packages.myVimPackage.start = with pkgs.vimPlugins; [
