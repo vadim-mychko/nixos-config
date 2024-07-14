@@ -21,6 +21,7 @@
       ${builtins.readFile ./mappings.lua}
       ${builtins.readFile ./theme.lua}
       ${builtins.readFile ./lsp.lua}
+      EOF
     '';
   };
 }
