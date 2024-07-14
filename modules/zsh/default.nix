@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  # ===========================================================================
+  # https://github.com/romkatv/powerlevel10k
+  # https://github.com/Aloxaf/fzf-tab
+  # ===========================================================================
+
   users.defaultUserShell = pkgs.zsh;
   environment.systemPackages = with pkgs; [
     zsh-powerlevel10k
