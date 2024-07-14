@@ -12,6 +12,10 @@
       modus-themes-nvim
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
+
+      plenary-nvim
+      telescope-fzf-native-nvim
+      telescope-ui-select-nvim
       telescope-nvim
     ];
 
