@@ -22,6 +22,7 @@
     fd
     jq
     ripgrep
+    wl-clipboard
     fastfetch
   ];
 
