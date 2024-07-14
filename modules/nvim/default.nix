@@ -2,8 +2,8 @@
 
 {
   # ===========================================================================
-  # [1] https://github.com/microsoft/pyright
-  # [2] https://github.com/oxalica/nil
+  # https://github.com/microsoft/pyright
+  # https://github.com/oxalica/nil
   # ===========================================================================
 
   environment.systemPackages = with pkgs; [
@@ -12,10 +12,10 @@
   ];
 
   # ===========================================================================
-  # [1] https://github.com/miikanissi/modus-themes.nvim
-  # [2] https://github.com/neovim/nvim-lspconfig
-  # [3] https://github.com/nvim-treesitter/nvim-treesitter
-  # [4] https://github.com/nvim-telescope/telescope.nvim/
+  # https://github.com/miikanissi/modus-themes.nvim
+  # https://github.com/neovim/nvim-lspconfig
+  # https://github.com/nvim-treesitter/nvim-treesitter
+  # https://github.com/nvim-telescope/telescope.nvim/
   # ===========================================================================
 
   programs.neovim = {
