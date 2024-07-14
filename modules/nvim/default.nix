@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  # ===========================================================================
+  # [1] https://github.com/microsoft/pyright
+  # [2] https://github.com/oxalica/nil
+  # ===========================================================================
+
   environment.systemPackages = with pkgs; [
     pyright
     nil
