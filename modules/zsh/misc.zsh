@@ -1,13 +1,11 @@
 # [1] https://youtu.be/ud7YxC33Z3w?si=0XJlozgWevORbcph
 # [2] https://stackoverflow.com/a/24237590
-# [3] https://unix.stackexchange.com/a/97844
 # ============================== AUTO COMPLETION ==============================
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-_comp_options+=(globdots)
 
 # ================================== HISTORY ==================================
 HISTSIZE=10000
@@ -21,8 +19,6 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
-bindkey '^[[A' history-beginning-search-backward
-bindkey '^[[B' history-beginning-search-forward
 
 # ================================= VIM MODE ==================================
 bindkey -v
