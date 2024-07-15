@@ -20,6 +20,7 @@
       ${builtins.readFile ./prompt.zsh}
       ${builtins.readFile ./aliases.zsh}
       ${builtins.readFile ./variables.zsh}
+      ${builtins.readfile ./utils.zsh}
       ${builtins.readFile ./misc.zsh}
     '';
   };

@@ -1,21 +1,20 @@
-#!/usr/bin/env bash
-
-# Array of color names
-color_names=(
+function print-colors() {
+    color_names=(
     "Black" "Red" "Green" "Yellow" "Blue" "Magenta" "Cyan" "White"
     "Bright Black" "Bright Red" "Bright Green" "Bright Yellow"
     "Bright Blue" "Bright Magenta" "Bright Cyan" "Bright White"
-)
+  )
 
-for i in {0..15}; do
+  for i in {0..15}; do
     if [ $i -lt 10 ]; then
-        index=" $i"  # Add a leading space for single-digit numbers
+      index=" $i"
     else
-        index=$i
+      index=$i
     fi
+
     tput setaf $i
     echo "Color $index (${color_names[$i]})"
-done
+  done
 
-# Reset the text color to default
-tput sgr0
+  tput sgr0
+}
