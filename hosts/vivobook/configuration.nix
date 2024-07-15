@@ -23,6 +23,7 @@
     jq
     ripgrep
     wl-clipboard
+    zathura
     fastfetch
   ];
 
