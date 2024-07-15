@@ -13,7 +13,7 @@ function print-colors() {
     fi
 
     tput setaf $i
-    echo "Color $index (${color_names[$i]})"
+    echo "Color $index (${color_names[$(expr $i + 1)]})"
   done
 
   tput sgr0
