@@ -1,5 +1,5 @@
 function print-colors() {
-    color_names=(
+  color_names=(
     "Black" "Red" "Green" "Yellow" "Blue" "Magenta" "Cyan" "White"
     "Bright Black" "Bright Red" "Bright Green" "Bright Yellow"
     "Bright Blue" "Bright Magenta" "Bright Cyan" "Bright White"
@@ -17,4 +17,10 @@ function print-colors() {
   done
 
   tput sgr0
+}
+
+function print-colormap() {
+  for i in {0..255}; do
+    print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'};
+  done
 }
