@@ -112,10 +112,7 @@
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  boot.kernelParams = [
-    "i915.enable_guc=3"
-    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-  ];
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
