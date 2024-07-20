@@ -1,9 +1,129 @@
 #!/usr/bin/env python
 
 from argparse import ArgumentParser
+import textwrap
 
 
-PALETTE = {
+OPERANDI = {
+    "bg-main": "ffffff",
+    "bg-dim": "f0f0f0",
+    "fg-main": "000000",
+    "fg-dim": "595959",
+    "fg-alt": "193668",
+    "bg-active": "c4c4c4",
+    "bg-inactive": "e0e0e0",
+    "border": "9f9f9f",
+    "red": "a60000",
+    "red-warmer": "972500",
+    "red-cooler": "a0132f",
+    "red-faint": "7f0000",
+    "red-intense": "d00000",
+    "green": "006800",
+    "green-warmer": "316500",
+    "green-cooler": "00663f",
+    "green-faint": "2a5045",
+    "green-intense": "008900",
+    "yellow": "6f5500",
+    "yellow-warmer": "884900",
+    "yellow-cooler": "7a4f2f",
+    "yellow-faint": "624416",
+    "yellow-intense": "808000",
+    "blue": "0031a9",
+    "blue-warmer": "354fcf",
+    "blue-cooler": "0000b0",
+    "blue-faint": "003497",
+    "blue-intense": "0000ff",
+    "magenta": "721045",
+    "magenta-warmer": "8f0075",
+    "magenta-cooler": "531ab6",
+    "magenta-faint": "7c318f",
+    "magenta-intense": "dd22dd",
+    "cyan": "005e8b",
+    "cyan-warmer": "3f578f",
+    "cyan-cooler": "005f5f",
+    "cyan-faint": "005077",
+    "cyan-intense": "008899",
+    "rust": "8a290f",
+    "gold": "80601f",
+    "olive": "56692d",
+    "slate": "2f3f83",
+    "indigo": "4a3a8a",
+    "maroon": "731c52",
+    "pink": "7b435c",
+    "bg-red-intense": "ff8f88",
+    "bg-green-intense": "8adf80",
+    "bg-yellow-intense": "f3d000",
+    "bg-blue-intense": "bfc9ff",
+    "bg-magenta-intense": "dfa0f0",
+    "bg-cyan-intense": "a4d5f9",
+    "bg-red-subtle": "ffcfbf",
+    "bg-green-subtle": "b3fabf",
+    "bg-yellow-subtle": "fff576",
+    "bg-blue-subtle": "ccdfff",
+    "bg-magenta-subtle": "ffddff",
+    "bg-cyan-subtle": "bfefff",
+    "bg-red-nuanced": "fff1f0",
+    "bg-green-nuanced": "ecf7ed",
+    "bg-yellow-nuanced": "fff3da",
+    "bg-blue-nuanced": "f3f3ff",
+    "bg-magenta-nuanced": "fdf0ff",
+    "bg-cyan-nuanced": "ebf6fa",
+    "bg-graph-red-0": "ef7969",
+    "bg-graph-red-1": "ffaab4",
+    "bg-graph-green-0": "4faa09",
+    "bg-graph-green-1": "8fef00",
+    "bg-graph-yellow-0": "ffcf00",
+    "bg-graph-yellow-1": "f9ff00",
+    "bg-graph-blue-0": "7090ff",
+    "bg-graph-blue-1": "9fc6ff",
+    "bg-graph-magenta-0": "e07fff",
+    "bg-graph-magenta-1": "fad0ff",
+    "bg-graph-cyan-0": "70d3f0",
+    "bg-graph-cyan-1": "afefff",
+    "bg-completion": "c0deff",
+    "bg-hover": "94d4ff",
+    "bg-hover-secondary": "f5d0a0",
+    "bg-hl-line": "d0d6ec",
+    "bg-paren-match": "5fcfff",
+    "bg-paren-expression": "efd3f5",
+    "bg-region": "bcbcbc",
+    "bg-region-subtle": "f0e0cc",
+    "bg-char-0": "7feaff",
+    "bg-char-1": "ffaaff",
+    "bg-char-2": "dff000",
+    "bg-mode-line-active": "c8c8c8",
+    "fg-mode-line-active": "000000",
+    "border-mode-line-active": "5a5a5a",
+    "bg-mode-line-inactive": "e6e6e6",
+    "fg-mode-line-inactive": "585858",
+    "border-mode-line-inactive": "a3a3a3",
+    "modeline-err": "7f0000",
+    "modeline-warning": "5f0070",
+    "modeline-info": "002580",
+    "bg-tab-bar": "dfdfdf",
+    "bg-tab-current": "ffffff",
+    "bg-tab-other": "c2c2c2",
+    "bg-added": "c1f2d1",
+    "bg-added-faint": "d8f8e1",
+    "bg-added-refine": "aee5be",
+    "bg-added-intense": "8cca8c",
+    "fg-added": "005000",
+    "fg-added-intense": "006700",
+    "bg-changed": "ffdfa9",
+    "bg-changed-faint": "ffefbf",
+    "bg-changed-refine": "fac090",
+    "bg-changed-intense": "d7c20a",
+    "fg-changed": "553d00",
+    "fg-changed-intense": "655000",
+    "bg-removed": "ffd8d5",
+    "bg-removed-faint": "ffe9e9",
+    "bg-removed-refine": "f3b5af",
+    "bg-removed-intense": "d84a4f",
+    "fg-removed": "8f1313",
+    "fg-removed-intense": "aa2222",
+}
+
+VIVENDI = {
     "bg-main": "000000",
     "bg-dim": "1e1e1e",
     "fg-main": "ffffff",
@@ -123,10 +243,44 @@ PALETTE = {
 }
 
 
+def generate_foot(palette):
+    config = f"""
+        [colors]
+        foreground={palette["fg-main"]}
+        background={palette["bg-main"]}
+
+        regular0={palette["bg-main"]}
+        regular1={palette["red"]}
+        regular2={palette["green"]}
+        regular3={palette["yellow"]}
+        regular4={palette["blue"]}
+        regular5={palette["magenta"]}
+        regular6={palette["cyan"]}
+        regular7={palette["fg-main"]}
+
+        bright0={palette["bg-dim"]}
+        bright1={palette["red-intense"]}
+        bright2={palette["green-intense"]}
+        bright3={palette["yellow-intense"]}
+        bright4={palette["blue-cooler"]}
+        bright5={palette["magenta-intense"]}
+        bright6={palette["cyan-intense"]}
+        bright7={palette["fg-dim"]}
+    """
+    return textwrap.dedent(config[1:])
+
+
 def main():
     parser = ArgumentParser()
-    parser.add_argument("applicaton", choices=["foot"])
+    parser.add_argument("application", choices=["foot"])
+    parser.add_argument("--palette", choices=["operandi", "vivendi"], default="vivendi")
     args = parser.parse_args()
+
+    application = args.application
+    palette = OPERANDI if args.palette == "operandi" else VIVENDI
+
+    if application == "foot":
+        print(generate_foot(palette), end="")
 
 
 if __name__ == "__main__":
