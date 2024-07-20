@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from argparse import ArgumentParser
 import textwrap
+from argparse import ArgumentParser
 
 
 OPERANDI = {
