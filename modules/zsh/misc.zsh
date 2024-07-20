@@ -1,5 +1,6 @@
 # https://youtu.be/ud7YxC33Z3w?si=0XJlozgWevORbcph
 # https://stackoverflow.com/a/24237590
+# https://unix.stackexchange.com/a/97844
 # ============================== AUTO COMPLETION ==============================
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -19,6 +20,14 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-beginning-search-backward
+bindkey "$terminfo[kcud1]" history-beginning-search-forward
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+bindkey "^[OA" history-beginning-search-backward
+bindkey "^[OB" history-beginning-search-forward
 
 # ================================= VIM MODE ==================================
 bindkey -v
