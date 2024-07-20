@@ -15,7 +15,7 @@
       ${builtins.readFile ./prompt.zsh}
       ${builtins.readFile ./aliases.zsh}
       ${builtins.readFile ./variables.zsh}
-      ${builtins.readFile ./utils.zsh}
+      ${builtins.readFile ./functions.zsh}
       ${builtins.readFile ./misc.zsh}
     '';
   };
