@@ -23,6 +23,7 @@
     jq
     ripgrep
     lazygit
+    htop
     btop
     wl-clipboard
     zathura
