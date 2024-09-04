@@ -22,9 +22,11 @@
     fd
     jq
     ripgrep
+    lazygit
     wl-clipboard
     zathura
     fastfetch
+    google-chrome
   ];
 
   # ================================= LOCALE ==================================
