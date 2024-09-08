@@ -134,11 +134,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  services.xserver.xkb = {
-    layout = "us,ru,cz";
-    options = "grp:win_space_toggle";
-  };
-
   users.users.mychkvad = {
     isNormalUser = true;
     description = "Vadim Mychko";
