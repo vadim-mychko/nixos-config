@@ -136,7 +136,7 @@
 
   services.xserver.xkb = {
     layout = "us,ru,cz";
-    options = "grp:super_space_toggle";
+    options = "grp:win_space_toggle";
   };
 
   users.users.mychkvad = {
