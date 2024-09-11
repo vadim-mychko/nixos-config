@@ -36,15 +36,7 @@
   time.timeZone = "Europe/Prague";
   i18n.defaultLocale = "en_GB.UTF-8";
 
-  # =========================== GARBAGE COLLECTION ============================
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-
-  # ================================== FONTS ==================================
+ # ================================== FONTS ==================================
 
   fonts = {
     packages = with pkgs; [
