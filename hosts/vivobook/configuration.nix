@@ -3,11 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/git
-    ../../modules/zsh
-    ../../modules/sway
-    ../../modules/nvim
-    ../../modules/tmux
+    ../../modules
   ];
 
   # ================================ PACKAGES =================================
