@@ -22,6 +22,7 @@
     lazygit
     htop
     btop
+    tlrc
     wl-clipboard
     zathura
     fastfetch
