@@ -30,11 +30,11 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 vim.cmd.colorscheme "modus"
 
--- ============================= Language Servers =============================
+-- ============================= LANGUAGE SERVERS =============================
 local lspconfig = require("lspconfig")
 lspconfig.nil_ls.setup {}
 
--- ================================ Telescope =================================
+-- ================================ TELESCOPE =================================
 local telescope = require("telescope")
 telescope.setup {}
 telescope.load_extension("fzf")
