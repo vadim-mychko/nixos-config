@@ -15,14 +15,5 @@
       telescope-fzf-native-nvim
       telescope-nvim
     ];
-
-    configure.customRC = ''
-      lua << EOF
-      ${builtins.readFile ./options.lua}
-      ${builtins.readFile ./modus.lua}
-      ${builtins.readFile ./lsp.lua}
-      ${builtins.readFile ./telescope.lua}
-      EOF
-    '';
   };
 }

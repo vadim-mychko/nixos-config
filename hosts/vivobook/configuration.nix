@@ -21,6 +21,7 @@
     fzf
     fd
     jq
+    bat
     ripgrep
     lazygit
     htop
