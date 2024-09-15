@@ -27,6 +27,7 @@
     zathura
     fastfetch
     google-chrome
+    gnome.gnome-tweaks
   ];
 
   # ================================= LOCALE ==================================
