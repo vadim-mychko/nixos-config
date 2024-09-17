@@ -8,7 +8,11 @@
       user.name = "Vadim Mychko";
       user.email = "vadim_mychko@proton.me";
       init.defaultBranch = "main";
-      core.pager = "less -+F -+X";
+      core.pager = "delta";
+      interactive.diffFilter = "delta --color-only";
+      delta.navigate = "true";
+      merge.conflictstyle = "diff3";
+      diff.colorMoved = "default";
       diff.tool = "nvimdiff";
       difftool.prompt = "false";
     };
