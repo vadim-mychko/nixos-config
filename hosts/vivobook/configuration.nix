@@ -18,6 +18,7 @@
     fd
     jq
     bat
+    delta
     ripgrep
     lazygit
     htop
