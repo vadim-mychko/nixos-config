@@ -24,6 +24,7 @@
     htop
     btop
     tlrc
+    eza
     wl-clipboard
     zathura
     fastfetch
