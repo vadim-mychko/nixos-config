@@ -19,6 +19,7 @@ alias gb='git branch'
 # ================================= VARIABLES =================================
 export EDITOR='nvim'
 export BAT_THEME='modus_vivendi'
+export BAT_PAGER='less -+F'
 export MANPAGER='nvim +Man!'
 export LESS=
 
