@@ -1,6 +1,7 @@
 # https://youtu.be/ud7YxC33Z3w?si=0XJlozgWevORbcph
 # https://stackoverflow.com/a/24237590
 # https://unix.stackexchange.com/a/97844
+# https://www.youtube.com/watch?v=mmqDYw9C30I
 # ================================== ALIASES ==================================
 alias vi='nvim'
 alias vim='nvim'
@@ -17,6 +18,7 @@ alias gb='git branch'
 
 # ================================= VARIABLES =================================
 export EDITOR='nvim'
+export BAT_THEME='modus_vivendi'
 
 # ================================= FUNCTIONS =================================
 function print-colors() {
@@ -86,3 +88,15 @@ export KEYTIMEOUT=1
 # ============================== INITIALIZATION ===============================
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+export FZF_DEFAULT_COMMAND="fd --hidden --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --exclude .git"
+
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
