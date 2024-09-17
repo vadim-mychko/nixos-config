@@ -11,14 +11,14 @@
       diff.tool = "nvimdiff";
       difftool.prompt = "false";
 
-      core.pager = "delta";
+      core.pager = "delta --paging=always";
       interactive.diffFilter = "delta --color-only --diff-so-fancy";
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
       delta = {
         navigate = true;
         "side-by-side" = true;
-     };
+      };
     };
   };
 }

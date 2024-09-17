@@ -20,6 +20,7 @@ alias gb='git branch'
 export EDITOR='nvim'
 export BAT_THEME='modus_vivendi'
 export MANPAGER='nvim +Man!'
+export LESS=
 
 # ================================= FUNCTIONS =================================
 function print-colors() {
