@@ -17,6 +17,7 @@
       diff.colorMoved = "default";
       delta = {
         navigate = true;
+        dark = true;
         "side-by-side" = true;
         "minus-style" = "syntax \"#ffbfbf\"";
         "minus-non-emph-style" = "syntax \"#ffbfbf\"";
