@@ -13,7 +13,10 @@
       nvim-treesitter.withAllGrammars
       plenary-nvim
       telescope-fzf-native-nvim
+      nvim-web-devicons
       telescope-nvim
+      lualine-nvim
+      alpha-nvim
     ];
 
     configure.customRC = ''
