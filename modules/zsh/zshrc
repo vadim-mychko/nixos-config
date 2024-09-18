@@ -101,6 +101,10 @@ export FZF_ALT_C_COMMAND="fd --type=d --hidden --follow --exclude .git"
 export FZF_CTRL_T_OPTS="--preview '$fzf_preview'"
 export FZF_ALT_C_OPTS="--preview 'eza -T -L=2 --color=always {}'"
 
+fzf () {
+  fzf-tmux -p "$@"
+}
+
 _fzf_compgen_path() {
   fd --hidden --follow --exclude .git . "$1"
 }
