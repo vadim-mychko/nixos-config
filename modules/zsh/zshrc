@@ -92,7 +92,7 @@ export KEYTIMEOUT=1
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-fzf_preview="if [ -d {} ]; then eza -T -L=2 --color=always {}; else ban -n --color=always {}; fi"
+fzf_preview="if [ -d {} ]; then eza -T -L=2 --color=always {}; else bat -n --color=always {}; fi"
 
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
