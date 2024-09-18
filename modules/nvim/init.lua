@@ -30,6 +30,9 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 vim.cmd.colorscheme "modus"
 
+-- ================================= GREETER ==================================
+
+
 -- ============================= LANGUAGE SERVERS =============================
 local lspconfig = require("lspconfig")
 lspconfig.nil_ls.setup {}
