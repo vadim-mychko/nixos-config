@@ -60,13 +60,16 @@ dashboard.section.buttons.val = {
 alpha.setup(dashboard.opts)
 vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 
+-- =============================== STATUS LINE ================================
+require("lualine").setup({})
+
 -- ============================= LANGUAGE SERVERS =============================
 local lspconfig = require("lspconfig")
-lspconfig.nil_ls.setup {}
+lspconfig.nil_ls.setup({})
 
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
-telescope.setup {}
+telescope.setup({})
 telescope.load_extension("fzf")
 
 local builtin = require("telescope.builtin")
