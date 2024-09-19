@@ -1,5 +1,6 @@
 -- https://github.com/nvim-lua/kickstart.nvim/
 -- https://youtu.be/m8C0Cq9Uv9o?si=3xxD7fEK63qZ41PO
+-- https://www.youtube.com/watch?v=6pAG3BHurdM
 -- ============================== BASIC OPTIONS ===============================
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -7,6 +8,13 @@ vim.g.have_nerd_font = true
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.wrap = false
+vim.opt.termguicolors = true
+vim.opt.backspace = "indent,eol,start"
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.clipboard = "unnamedplus"
@@ -31,7 +39,26 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.cmd.colorscheme "modus"
 
 -- ================================= GREETER ==================================
+local alpha = require("alpha")
+local dashboard = require("alpha.themes.dashboard")
 
+dashboard.section.header.val = {
+  "                                                     ",
+  "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+  "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+  "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+  "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+  "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+  "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+  "                                                     ",
+}
+
+dashboard.section.buttons.val = {
+  dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
+}
+
+alpha.setup(dashboard.opts)
+vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 
 -- ============================= LANGUAGE SERVERS =============================
 local lspconfig = require("lspconfig")
