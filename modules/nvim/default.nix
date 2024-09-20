@@ -26,6 +26,7 @@
       nvim-cmp
       cmp-nvim-lsp
       cmp_luasnip
+      lspkind-nvim
     ];
 
     configure.customRC = ''
