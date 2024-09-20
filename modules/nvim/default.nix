@@ -17,6 +17,9 @@
       telescope-nvim
       lualine-nvim
       alpha-nvim
+      vim-sleuth
+      nvim-autopairs
+      indent-blankline-nvim
     ];
 
     configure.customRC = ''

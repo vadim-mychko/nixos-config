@@ -12,6 +12,8 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.shiftround = true
 vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.backspace = "indent,eol,start"
@@ -47,9 +49,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- ================================= GREETER ==================================
-local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
-
 dashboard.section.header.val = {
   "                                                     ",
   "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
@@ -68,12 +68,25 @@ dashboard.section.buttons.val = {
   dashboard.button("q", "  > Quit Neovim", "<cmd>qa<CR>"),
 }
 
-alpha.setup(dashboard.opts)
+require("alpha").setup(dashboard.opts)
 vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 
+-- ================================ TREESITTER ================================
+require("nvim-treesitter.configs").setup({
+  highlight = { enable = true },
+  indent = { enable = true },
+})
+
+-- ============================ INDENTATION GUIDES=============================
+require("ibl").setup({
+  indent = { char = "┊" },
+})
+
+-- ================================ AUTOPAIRS =================================
+require("autopairs").setup({})
+
 -- =============================== STATUS LINE ================================
-local lualine = require("lualine")
-lualine.setup({})
+require("lualine").setup({})
 
 -- ============================= LANGUAGE SERVERS =============================
 local lspconfig = require("lspconfig")
