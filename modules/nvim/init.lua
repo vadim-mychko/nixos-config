@@ -98,7 +98,6 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "luasnip" },
-    { name = "buffer" },
     { name = "path" },
   }),
 
@@ -131,7 +130,6 @@ indentation.setup({
 -- ================================ AUTOPAIRS =================================
 local autopairs = require("nvim-autopairs")
 autopairs.setup({
-  enable_check_bracket_line = false,
   check_ts = true,
   ts_config = {
     lua = { "string" },
