@@ -20,6 +20,12 @@
       vim-sleuth
       nvim-autopairs
       indent-blankline-nvim
+      luasnip
+      cmp-buffer
+      cmp-path
+      nvim-cmp
+      cmp-nvim-lsp
+      cmp_luasnip
     ];
 
     configure.customRC = ''
