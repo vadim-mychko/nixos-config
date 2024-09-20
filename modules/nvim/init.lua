@@ -80,6 +80,8 @@ require("nvim-treesitter.configs").setup({
 -- ============================== AUTOCOMPLETION ==============================
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+local lspkind = require("lspkind")
+
 cmp.setup({
   completion = {
     completeopt = "menu,menuone,preview,noselect"
