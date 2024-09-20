@@ -24,6 +24,7 @@
       luasnip
       cmp-buffer
       cmp-path
+      cmp-cmdline
       nvim-cmp
       cmp-nvim-lsp
       cmp_luasnip
