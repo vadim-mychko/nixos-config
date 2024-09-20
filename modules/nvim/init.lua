@@ -63,8 +63,8 @@ dashboard.section.header.val = {
 
 dashboard.section.buttons.val = {
   dashboard.button( "e", "   > New file" , "<cmd>ene<CR>"),
-  dashboard.button("SPC ff", "   > [F]ind [F]ile", "<cmd>Telescope find_files<CR>"),
-  dashboard.button("SPC fs", "   > [F]ind [S]tring", "<cmd>Telescope live_grep<CR>"),
+  dashboard.button("SPC sf", "   > [S]earch [F]ile", "<cmd>Telescope find_files<CR>"),
+  dashboard.button("SPC ss", "   > [S]earch [S]tring", "<cmd>Telescope live_grep<CR>"),
   dashboard.button("q", "   > Quit Neovim", "<cmd>qa<CR>"),
 }
 
@@ -85,5 +85,5 @@ telescope.setup({})
 telescope.load_extension("fzf")
 
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]ile" })
-vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "[F]ind [S]tring" })
+vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]ile" })
+vim.keymap.set("n", "<leader>ss", builtin.live_grep, { desc = "[S]earch [S]tring" })
