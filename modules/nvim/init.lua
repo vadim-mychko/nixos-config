@@ -49,6 +49,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- ================================= GREETER ==================================
+local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
   "                                                     ",
@@ -68,11 +69,12 @@ dashboard.section.buttons.val = {
   dashboard.button("q", "  > Quit Neovim", "<cmd>qa<CR>"),
 }
 
-require("alpha").setup(dashboard.opts)
+alpha.setup(dashboard.opts)
 vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 
 -- ================================ TREESITTER ================================
-require("nvim-treesitter.configs").setup({
+local treesitter = require("nvim-treesitter.configs")
+treesitter.setup({
   highlight = { enable = true },
   indent = { enable = true },
 })
@@ -118,20 +120,41 @@ cmp.setup({
 })
 
 -- ============================ INDENTATION GUIDES=============================
-require("ibl").setup({
+local indentation = require("ibl")
+indentation.setup({
   indent = { char = "┊" },
 })
 
 -- ================================ AUTOPAIRS =================================
-require("nvim-autopairs").setup({})
+local autopairs = require("nvim-autopairs")
+autopairs.setup({
+  check_ts = true,
+  ts_config = {
+    lua = { "string" },
+    javascript = { "template_string" },
+    java = false,
+  },
+})
+
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 -- =============================== STATUS LINE ================================
-require("lualine").setup({})
+local lualine = require("lualine")
+lualine.setup({})
 
 -- ============================= LANGUAGE SERVERS =============================
 local lspconfig = require("lspconfig")
 lspconfig.nil_ls.setup({})
-lspconfig.lua_ls.setup({})
+lspconfig.lua_ls.setup({
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+    },
+  },
+})
 
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
