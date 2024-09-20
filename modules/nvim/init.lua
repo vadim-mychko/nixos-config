@@ -123,7 +123,7 @@ require("ibl").setup({
 })
 
 -- ================================ AUTOPAIRS =================================
-require("autopairs").setup({})
+require("nvim-autopairs").setup({})
 
 -- =============================== STATUS LINE ================================
 require("lualine").setup({})
@@ -131,6 +131,7 @@ require("lualine").setup({})
 -- ============================= LANGUAGE SERVERS =============================
 local lspconfig = require("lspconfig")
 lspconfig.nil_ls.setup({})
+lspconfig.lua_ls.setup({})
 
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
