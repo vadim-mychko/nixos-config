@@ -28,7 +28,6 @@
     wl-clipboard
     zathura
     fastfetch
-    google-chrome
   ];
 
   # ================================= LOCALE ==================================
