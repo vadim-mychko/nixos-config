@@ -28,6 +28,8 @@
     wl-clipboard
     zathura
     fastfetch
+    calibre
+    qpdfview
   ];
 
   # ================================= LOCALE ==================================
