@@ -38,7 +38,7 @@
   time.timeZone = "Europe/Prague";
   i18n.defaultLocale = "en_GB.UTF-8";
 
- # ================================== FONTS ==================================
+  # ================================== FONTS ==================================
 
   fonts = {
     packages = with pkgs; [
