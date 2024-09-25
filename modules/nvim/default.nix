@@ -32,6 +32,7 @@
       cmp_luasnip
       lspkind-nvim
       harpoon2
+      undotree
     ];
 
     configure.customRC = ''
