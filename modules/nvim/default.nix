@@ -34,6 +34,7 @@
       harpoon2
       undotree
       auto-session
+      lazygit-nvim
     ];
 
     configure.customRC = ''
