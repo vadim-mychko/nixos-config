@@ -166,8 +166,14 @@ lualine.setup({
 
 -- ============================= LANGUAGE SERVERS =============================
 local lspconfig = require("lspconfig")
-lspconfig.nil_ls.setup({})
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+lspconfig.nil_ls.setup({
+  capabilities = capabilities,
+})
+
 lspconfig.lua_ls.setup({
+  capabilities = capabilities,
   settings = {
     Lua = {
       diagnostics = {
@@ -177,7 +183,9 @@ lspconfig.lua_ls.setup({
   },
 })
 
-lspconfig.basedpyright.setup({})
+lspconfig.basedpyright.setup({
+  capabilities = capabilities,
+})
 
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
