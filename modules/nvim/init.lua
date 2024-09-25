@@ -201,5 +201,5 @@ vim.keymap.set("n", "<M-3>", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<M-4>", function() harpoon:list():select(4) end)
 
 -- ================================= UNDOTREE =================================
-vim.keymap.set("n", "<leader>ut", "<cmd>UndotreeToggle<CR>", { desc = "[U]ndotree [T]oggle" })
-vim.keymap.set("n", "<leader>uf", "<cmd>UndotreeFocus<CR>", { desc = "[U]ndotree [F]ocus" })
+vim.keymap.set("n", "<leader>tt", "<cmd>UndotreeToggle<CR>", { desc = "Undo[T]ree [T]oggle" })
+vim.keymap.set("n", "<leader>tf", "<cmd>UndotreeFocus<CR>", { desc = "Undo[T]ree [F]ocus" })
