@@ -160,6 +160,8 @@ lspconfig.lua_ls.setup({
   },
 })
 
+lspconfig.basedpyright.setup({})
+
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
 telescope.setup({})
