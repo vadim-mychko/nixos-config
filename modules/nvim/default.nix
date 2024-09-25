@@ -31,6 +31,7 @@
       cmp-nvim-lsp
       cmp_luasnip
       lspkind-nvim
+      harpoon2
     ];
 
     configure.customRC = ''

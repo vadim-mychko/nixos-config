@@ -187,3 +187,14 @@ vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" 
 vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]ile" })
 vim.keymap.set("n", "<leader>ss", builtin.live_grep, { desc = "[S]earch [S]tring" })
+
+-- ================================= HARPOON =================================
+local harpoon = require("harpoon")
+harpoon:setup()
+
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set("n", "<M-1>", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<M-2>", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<M-3>", function() harpoon:list():select(3) end)
+vim.keymap.set("n", "<M-4>", function() harpoon:list():select(4) end)
