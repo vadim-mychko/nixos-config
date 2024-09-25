@@ -30,6 +30,8 @@
     fastfetch
     calibre
     qpdfview
+    zip
+    unzip
   ];
 
   # ================================= LOCALE ==================================
