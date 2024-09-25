@@ -203,3 +203,12 @@ vim.keymap.set("n", "<M-4>", function() harpoon:list():select(4) end)
 -- ================================= UNDOTREE =================================
 vim.keymap.set("n", "<leader>tt", "<cmd>UndotreeToggle<CR>", { desc = "Undo[T]ree [T]oggle" })
 vim.keymap.set("n", "<leader>tf", "<cmd>UndotreeFocus<CR>", { desc = "Undo[T]ree [F]ocus" })
+
+-- =============================== AUTOSESSIONS ===============================
+local auto_session = require("auto-session")
+auto_session.setup({
+  auto_restore_enabled = false,
+})
+
+vim.keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "[W]orkspace [S]ave" })
+vim.keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "[W]orkspace [R]estore" })

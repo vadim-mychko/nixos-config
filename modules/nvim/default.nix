@@ -33,6 +33,7 @@
       lspkind-nvim
       harpoon2
       undotree
+      auto-session
     ];
 
     configure.customRC = ''
