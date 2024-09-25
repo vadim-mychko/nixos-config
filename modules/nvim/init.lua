@@ -207,9 +207,7 @@ vim.keymap.set("n", "<leader>tf", "<cmd>UndotreeFocus<CR>", { desc = "Undo[T]ree
 
 -- =============================== AUTOSESSIONS ===============================
 local auto_session = require("auto-session")
-auto_session.setup({
-  auto_restore_enabled = false,
-})
+auto_session.setup({})
 
 vim.keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "[W]orkspace [S]ave" })
 vim.keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "[W]orkspace [R]estore" })
