@@ -71,7 +71,7 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
   dashboard.button( "e", "  > New file" , "<cmd>ene<CR>"),
   dashboard.button("SPC sf", "  > [S]earch [F]ile", "<cmd>Telescope find_files<CR>"),
-  dashboard.button("SPC ss", "  > [S]earch [S]tring", "<cmd>Telescope live_grep<CR>"),
+  dashboard.button("SPC sg", "  > [S]earch [G]rep", "<cmd>Telescope live_grep<CR>"),
   dashboard.button("SPC wr", "󰁯  > [W]orkspace [R]estore", "<cmd>SessionRestore<CR>"),
   dashboard.button("q", "  > Quit Neovim", "<cmd>qa<CR>"),
 }
@@ -196,14 +196,25 @@ lspconfig.basedpyright.setup({
 
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
-telescope.setup({})
+telescope.setup({
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown,
+    },
+  },
+})
+
 telescope.load_extension("fzf")
+telescope.load_extension("ui-select")
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]ile" })
-vim.keymap.set("n", "<leader>ss", builtin.live_grep, { desc = "[S]earch [S]tring" })
+vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch [G]rep" })
+vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
+
+
 
 -- ================================= HARPOON ==================================
 local harpoon = require("harpoon")
@@ -211,14 +222,14 @@ harpoon:setup()
 
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-vim.keymap.set("n", "<M-1>", function() harpoon:list():select(1) end)
-vim.keymap.set("n", "<M-2>", function() harpoon:list():select(2) end)
-vim.keymap.set("n", "<M-3>", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<M-5>", function() harpoon:list():select(5) end)
-vim.keymap.set("n", "<M-6>", function() harpoon:list():select(6) end)
-vim.keymap.set("n", "<M-7>", function() harpoon:list():select(7) end)
-vim.keymap.set("n", "<M-8>", function() harpoon:list():select(8) end)
-vim.keymap.set("n", "<M-9>", function() harpoon:list():select(9) end)
+vim.keymap.set({"n", "i"}, "<M-1>", function() harpoon:list():select(1) end)
+vim.keymap.set({"n", "i"}, "<M-2>", function() harpoon:list():select(2) end)
+vim.keymap.set({"n", "i"}, "<M-3>", function() harpoon:list():select(3) end)
+vim.keymap.set({"n", "i"}, "<M-5>", function() harpoon:list():select(5) end)
+vim.keymap.set({"n", "i"}, "<M-6>", function() harpoon:list():select(6) end)
+vim.keymap.set({"n", "i"}, "<M-7>", function() harpoon:list():select(7) end)
+vim.keymap.set({"n", "i"}, "<M-8>", function() harpoon:list():select(8) end)
+vim.keymap.set({"n", "i"}, "<M-9>", function() harpoon:list():select(9) end)
 
 -- ================================= UNDOTREE =================================
 vim.keymap.set("n", "<leader>ts", "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>", { desc = "Undo[T]ree [S]how" })

@@ -39,6 +39,7 @@
       nvim-lint
       gitsigns-nvim
       friendly-snippets
+      telescope-ui-select-nvim
     ];
 
     configure.customRC = ''
