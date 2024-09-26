@@ -36,6 +36,8 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 15
 vim.opt.hlsearch = true
+vim.opt.spell = true
+vim.opt.spelllang = { "en" }
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
@@ -194,12 +196,24 @@ lspconfig.basedpyright.setup({
   capabilities = capabilities,
 })
 
+lspconfig.ltex.setup({
+  capabilities = capabilities,
+  settings = {
+    ltex = {
+      language = "en",
+      additionalRules = {
+        languageModel = "~/ngrams/",
+      },
+    },
+  },
+})
+
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
 telescope.setup({
   extensions = {
     ["ui-select"] = {
-      require("telescope.themes").get_dropdown,
+      require("telescope.themes").get_dropdown(),
     },
   },
 })

@@ -7,6 +7,7 @@
     basedpyright
     ruff
     clang-tools
+    ltex-ls
   ];
 
   programs.neovim = {
