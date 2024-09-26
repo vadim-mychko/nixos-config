@@ -35,6 +35,8 @@
       undotree
       auto-session
       lazygit-nvim
+      conform-nvim
+      nvim-lint
     ];
 
     configure.customRC = ''

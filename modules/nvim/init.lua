@@ -125,7 +125,7 @@ cmp.setup({
   }),
 })
 
--- ============================ INDENTATION GUIDES=============================
+-- ============================ INDENTATION GUIDES ============================
 local indentation = require("ibl")
 indentation.setup({
   scope = { enabled = false },
@@ -208,11 +208,14 @@ vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:lis
 vim.keymap.set("n", "<M-1>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<M-2>", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<M-3>", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<M-4>", function() harpoon:list():select(4) end)
+vim.keymap.set("n", "<M-5>", function() harpoon:list():select(5) end)
+vim.keymap.set("n", "<M-6>", function() harpoon:list():select(6) end)
+vim.keymap.set("n", "<M-7>", function() harpoon:list():select(7) end)
+vim.keymap.set("n", "<M-8>", function() harpoon:list():select(8) end)
+vim.keymap.set("n", "<M-9>", function() harpoon:list():select(9) end)
 
 -- ================================= UNDOTREE =================================
-vim.keymap.set("n", "<leader>tt", "<cmd>UndotreeToggle<CR>", { desc = "Undo[T]ree [T]oggle" })
-vim.keymap.set("n", "<leader>tf", "<cmd>UndotreeFocus<CR>", { desc = "Undo[T]ree [F]ocus" })
+vim.keymap.set("n", "<leader>ts", "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>", { desc = "Undo[T]ree [S]how" })
 
 -- =============================== AUTOSESSIONS ===============================
 local auto_session = require("auto-session")
@@ -223,3 +226,26 @@ vim.keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "[W]orkspa
 
 -- ================================= LAZYGIT ==================================
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "[L]azy [G]it" })
+
+-- ================================= LINTING ==================================
+local lint = require("lint")
+lint.linters_by_ft = {
+  python = { "ruff" },
+  nix = { "nix" },
+}
+
+local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+  group = lint_augroup,
+  callback = function()
+    lint.try_lint()
+  end,
+})
+
+-- ================================ FORMATTING ================================
+local conform = require("conform")
+conform.setup({
+  formatters_by_ft = {
+    python = { "ruff_organize_imports", "ruff_format" }
+  },
+})
