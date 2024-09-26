@@ -239,7 +239,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<leader>gd", builtin.lsp_definitions, "[G]oto [D]efinitions")
     map("<leader>gr", builtin.lsp_references, "[G]oto [R]eferences")
     map("<leader>gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
-    map("<leader>td", builtin.lsp_type_definitions, "[T]ype [D]efinitions")
+    map("<leader>gt", builtin.lsp_type_definitions, "[G]oto [T]ype definitions")
     map("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
     map("<leader>ws", builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
     map("<leader>rn", vim.lsp.buf.rename, "[R]e[N]ame")
@@ -337,3 +337,8 @@ local trouble = require("trouble")
 trouble.setup({
   focus = true,
 })
+
+vim.keymap.set("n", "<leader>td", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "[T]rouble [D]ocument" })
+vim.keymap.set("n", "<leader>tw", "<cmd>Trouble diagnostics toggle<CR>", { desc = "[T]rouble [W]orkspace" })
+vim.keymap.set("n", "<leader>tq", "<cmd>Trouble quickfix toggle<CR>", { desc = "[T]rouble [Q]uickfix" })
+vim.keymap.set("n", "<leader>tl", "<cmd>Trouble loclist toggle<CR>", { desc = "[T]rouble [L]ocations" })
