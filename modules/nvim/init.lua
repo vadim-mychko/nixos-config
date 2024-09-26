@@ -5,6 +5,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -342,3 +344,21 @@ vim.keymap.set("n", "<leader>td", "<cmd>Trouble diagnostics toggle filter.buf=0<
 vim.keymap.set("n", "<leader>tw", "<cmd>Trouble diagnostics toggle<CR>", { desc = "[T]rouble [W]orkspace" })
 vim.keymap.set("n", "<leader>tq", "<cmd>Trouble quickfix toggle<CR>", { desc = "[T]rouble [Q]uickfix" })
 vim.keymap.set("n", "<leader>tl", "<cmd>Trouble loclist toggle<CR>", { desc = "[T]rouble [L]ocations" })
+
+-- ============================== FILE EXPLORER ===============================
+local nvim_tree = require("nvim-tree")
+nvim_tree.setup({
+  view = { width = 35, relativenumber = true },
+  actions = {
+    open_file = {
+      window_picker = { enable = false }
+    },
+  },
+
+  git = { ignore = false },
+})
+
+vim.keymap.set("n", "<leader>et", "<cmd>NvimTreeToggle<CR>", { desc = "[E]xplorer [T]oggle" })
+vim.keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "[E]xplorer [F]ind" })
+vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "[E]xplorer [C]ollapse" })
+vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[E]xplorer [R]efresh" })

@@ -43,6 +43,7 @@
       friendly-snippets
       telescope-ui-select-nvim
       trouble-nvim
+      nvim-tree-lua
     ];
 
     configure.customRC = ''
