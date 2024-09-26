@@ -214,7 +214,49 @@ vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]ile"
 vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch [G]rep" })
 vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
+  callback = function(event)
+    local map = function(keys, func, desc, mode)
+      mode = mode or "n"
+      vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
+    end
 
+    map("<leader>gd", builtin.lsp_definitions, "[G]oto [D]efinitions")
+    map("<leader>gr", builtin.lsp_references, "[G]oto [R]eferences")
+    map("<leader>gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
+    map("<leader>td", builtin.lsp_type_definitions, "[T]ype [D]efinitions")
+    map("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
+    map("<leader>ws", builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+    map("<leader>rn", vim.lsp.buf.rename, "[R]e[N]ame")
+    map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", {"n", "x"})
+    map("<leader>gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+      local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
+      vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+        buffer = event.buf,
+        group = highlight_augroup,
+        callback = vim.lsp.buf.document_highlight,
+      })
+
+      vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+        buffer = event.buf,
+        group = highlight_augroup,
+        callback = vim.lsp.buf.clear_references,
+      })
+
+      vim.api.nvim_create_autocmd("LspDetach", {
+        group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
+        callback = function(next_event)
+          vim.lsp.buf.clear_references()
+          vim.api.nvim_clear_autocmds { group = "lsp-highlight", buffer = next_event.buf }
+        end,
+      })
+    end
+  end
+})
 
 -- ================================= HARPOON ==================================
 local harpoon = require("harpoon")
@@ -251,9 +293,8 @@ lint.linters_by_ft = {
   nix = { "nix" },
 }
 
-local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-  group = lint_augroup,
+  group = vim.api.nvim_create_augroup("lint", { clear = true }),
   callback = function()
     lint.try_lint()
   end,

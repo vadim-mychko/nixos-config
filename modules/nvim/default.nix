@@ -6,6 +6,7 @@
     lua-language-server
     basedpyright
     ruff
+    clang-tools
   ];
 
   programs.neovim = {
