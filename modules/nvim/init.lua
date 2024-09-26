@@ -331,3 +331,9 @@ vim.keymap.set("n", "<leader>hN", gitsigns.prev_hunk, { desc = "[H]unk [N]ext ba
 vim.keymap.set("n", "<leader>hS", gitsigns.stage_buffer, { desc = "[H]unk [S]tage buffer" })
 vim.keymap.set("n", "<leader>hR", gitsigns.reset_buffer, { desc = "[H]unk [R]eset buffer" })
 vim.keymap.set("n", "<leader>hU", gitsigns.reset_buffer_index, { desc = "[H]unk [R]estore buffer" })
+
+-- =============================== DIAGNOSTICS ================================
+local trouble = require("trouble")
+trouble.setup({
+  focus = true,
+})
