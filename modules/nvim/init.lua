@@ -231,30 +231,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<leader>rn", vim.lsp.buf.rename, "[R]e[N]ame")
     map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", {"n", "x"})
     map("<leader>gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-
-    local client = vim.lsp.get_client_by_id(event.data.client_id)
-    if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
-      local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
-      vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-        buffer = event.buf,
-        group = highlight_augroup,
-        callback = vim.lsp.buf.document_highlight,
-      })
-
-      vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-        buffer = event.buf,
-        group = highlight_augroup,
-        callback = vim.lsp.buf.clear_references,
-      })
-
-      vim.api.nvim_create_autocmd("LspDetach", {
-        group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
-        callback = function(next_event)
-          vim.lsp.buf.clear_references()
-          vim.api.nvim_clear_autocmds { group = "lsp-highlight", buffer = next_event.buf }
-        end,
-      })
-    end
   end
 })
 
@@ -291,6 +267,8 @@ local lint = require("lint")
 lint.linters_by_ft = {
   python = { "ruff" },
   nix = { "nix" },
+  c = { "clang-tidy" },
+  cpp = { "clang-tidy" },
 }
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
@@ -305,9 +283,15 @@ local conform = require("conform")
 conform.setup({
   format_on_save = function(...) end,
   formatters_by_ft = {
-    python = { "ruff_organize_imports", "ruff_format" }
+    python = { "ruff_organize_imports", "ruff_format" },
+    c = { "clang-format" },
+    cpp = { "clang-format" },
   },
 })
+
+conform.formatters["clang-format"] = {
+  prepend_args = { "--style=Google" },
+}
 
 local format = function()
   conform.format({
