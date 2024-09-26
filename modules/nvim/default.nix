@@ -37,6 +37,8 @@
       lazygit-nvim
       conform-nvim
       nvim-lint
+      gitsigns-nvim
+      friendly-snippets
     ];
 
     configure.customRC = ''

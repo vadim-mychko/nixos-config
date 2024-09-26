@@ -49,6 +49,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
 -- ================================= GREETER ==================================
 local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
@@ -87,6 +92,7 @@ local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 
 luasnip.config.setup({})
+require("luasnip.loaders.from_vscode").load({})
 
 cmp.setup({
   completion = {
@@ -102,7 +108,6 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "luasnip" },
-    { name = "buffer" },
     { name = "path" },
   }),
 
@@ -167,7 +172,8 @@ lualine.setup({
 
 -- ============================= LANGUAGE SERVERS =============================
 local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 lspconfig.nil_ls.setup({
   capabilities = capabilities,
