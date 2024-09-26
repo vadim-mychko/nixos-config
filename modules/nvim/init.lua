@@ -245,7 +245,18 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 -- ================================ FORMATTING ================================
 local conform = require("conform")
 conform.setup({
+  format_on_save = function(...) end,
   formatters_by_ft = {
     python = { "ruff_organize_imports", "ruff_format" }
   },
 })
+
+local format = function()
+  conform.format({
+    async = true,
+    lsp_format = "fallback",
+    timeout_ms = 500,
+  })
+end
+
+vim.keymap.set({"n", "v"}, "<leader>fb", format, { desc = "[F]ormat [B]uffer" })
