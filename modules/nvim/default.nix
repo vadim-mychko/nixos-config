@@ -44,6 +44,7 @@
       telescope-ui-select-nvim
       trouble-nvim
       nvim-tree-lua
+      dressing-nvim
     ];
 
     configure.customRC = ''

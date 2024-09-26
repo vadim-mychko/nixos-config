@@ -347,6 +347,9 @@ vim.keymap.set("n", "<leader>tl", "<cmd>Trouble loclist toggle<CR>", { desc = "[
 
 -- ============================== FILE EXPLORER ===============================
 local nvim_tree = require("nvim-tree")
+local dressing = require("dressing")
+
+dressing.setup({})
 nvim_tree.setup({
   view = { width = 35, relativenumber = true },
   actions = {
