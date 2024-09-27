@@ -210,6 +210,10 @@ lspconfig.ltex.setup({
   },
 })
 
+lspconfig.clangd.setup({
+  capabilities = capabilities,
+})
+
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
 telescope.setup({
@@ -229,6 +233,7 @@ vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps"
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]ile" })
 vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch [G]rep" })
 vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
+vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffers" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
@@ -259,6 +264,7 @@ vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:lis
 vim.keymap.set({"n", "i"}, "<M-1>", function() harpoon:list():select(1) end)
 vim.keymap.set({"n", "i"}, "<M-2>", function() harpoon:list():select(2) end)
 vim.keymap.set({"n", "i"}, "<M-3>", function() harpoon:list():select(3) end)
+vim.keymap.set({"n", "i"}, "<M-4>", function() harpoon:list():select(4) end)
 vim.keymap.set({"n", "i"}, "<M-5>", function() harpoon:list():select(5) end)
 vim.keymap.set({"n", "i"}, "<M-6>", function() harpoon:list():select(6) end)
 vim.keymap.set({"n", "i"}, "<M-7>", function() harpoon:list():select(7) end)

@@ -270,9 +270,43 @@ def generate_foot(palette):
     return textwrap.dedent(config[1:])
 
 
+def generate_kitty(palette):
+    config = f"""
+        foreground #{palette["fg-main"]}
+        background #{palette["bg-main"]}
+
+        active_tab_background #{palette["bg-tab-current"]}
+        active_tab_foreground #{palette["fg-alt"]}
+        inactive_tab_background #{palette["bg-tab-other"]}
+        inactive_tab_foreground #{palette["fg-main"]}
+
+        active_border_color #{palette["blue-warmer"]}
+        inactive_border_color #{palette["border"]}
+
+        color0 #{palette["bg-main"]}
+        color1 #{palette["red"]}
+        color2 #{palette["green"]}
+        color3 #{palette["yellow"]}
+        color4 #{palette["blue"]}
+        color5 #{palette["magenta"]}
+        color6 #{palette["cyan"]}
+        color7 #{palette["fg-main"]}
+
+        color8 #{palette["bg-dim"]}
+        color9 #{palette["red-intense"]}
+        color10 #{palette["green-intense"]}
+        color11 #{palette["yellow-intense"]}
+        color12 #{palette["blue-cooler"]}
+        color13 #{palette["magenta-intense"]}
+        color14 #{palette["cyan-intense"]}
+        color15 #{palette["fg-dim"]}
+    """
+    return textwrap.dedent(config[1:])
+
+
 def main():
     parser = ArgumentParser()
-    parser.add_argument("application", choices=["foot"])
+    parser.add_argument("application", choices=["foot", "kitty"])
     parser.add_argument("--palette", choices=["operandi", "vivendi"], default="vivendi")
     args = parser.parse_args()
 
@@ -281,6 +315,8 @@ def main():
 
     if application == "foot":
         print(generate_foot(palette), end="")
+    elif application == "kitty":
+        print(generate_kitty(palette), end="")
 
 
 if __name__ == "__main__":
