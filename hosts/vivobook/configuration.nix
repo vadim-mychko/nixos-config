@@ -12,7 +12,6 @@
     firefox
     vscode
     telegram-desktop
-    foot
     zoxide
     fzf
     fd
