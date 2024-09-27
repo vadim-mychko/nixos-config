@@ -83,7 +83,7 @@ require("alpha").setup(dashboard.opts)
 vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 
 -- ================================ TREESITTER ================================
-require("treesitter").setup({
+require("nvim-treesitter.configs").setup({
   highlight = { enable = true },
   indent = { enable = true },
 })
@@ -139,7 +139,7 @@ require("ibl").setup({
 })
 
 -- ================================ AUTOPAIRS =================================
-require("autopairs").setup({
+require("nvim-autopairs").setup({
   check_ts = true,
   ts_config = {
     lua = { "string" },
@@ -269,7 +269,7 @@ vim.keymap.set({"n", "i"}, "<M-9>", function() harpoon:list():select(9) end)
 vim.keymap.set("n", "<leader>ts", "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>", { desc = "Undo[T]ree [S]how" })
 
 -- =============================== AUTOSESSIONS ===============================
-require("auto_session").setup({})
+require("auto-session").setup({})
 
 vim.keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "[W]orkspace [S]ave" })
 vim.keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "[W]orkspace [R]estore" })
@@ -345,7 +345,7 @@ vim.keymap.set("n", "<leader>tl", "<cmd>Trouble loclist toggle<CR>", { desc = "[
 
 -- ============================== FILE EXPLORER ===============================
 require("dressing").setup({})
-require("nvim_tree").setup({
+require("nvim-tree").setup({
   view = { width = 35, relativenumber = true },
   actions = {
     open_file = {
