@@ -43,14 +43,14 @@
 
   fonts = {
     packages = with pkgs; [
-      fira
+      jetbrains-mono
       noto-fonts
       noto-fonts-color-emoji
       meslo-lgs-nf
     ];
 
     fontconfig.defaultFonts = {
-      monospace = [ "Fira Mono" "MesloLGS NF" ];
+      monospace = [ "JetBrains Mono" "MesloLGS NF" ];
       serif = [ "Noto Serif" ];
       sansSerif = [ "Noto Sans" ];
       emoji = [ "Noto Color Emoji" ];
