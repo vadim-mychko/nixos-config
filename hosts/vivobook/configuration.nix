@@ -35,6 +35,7 @@
     imagemagick
     poppler
     texliveFull
+    direnv
   ];
 
   # ================================= LOCALE ==================================
