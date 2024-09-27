@@ -284,6 +284,7 @@ lint.linters_by_ft = {
   nix = { "nix" },
   c = { "clang-tidy" },
   cpp = { "clang-tidy" },
+  markdown = { "vale" },
 }
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {

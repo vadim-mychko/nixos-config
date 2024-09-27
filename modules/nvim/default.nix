@@ -9,6 +9,7 @@
     ruff
     clang-tools
     ltex-ls
+    vale
   ];
 
   nixpkgs.overlays = [(final: prev: { neovim = prev.neovim.override {
