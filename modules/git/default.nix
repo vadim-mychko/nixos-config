@@ -19,6 +19,8 @@
         navigate = true;
         "side-by-side" = true;
       };
+
+      commit.template = "~/.gitcommit";
     };
   };
 }
