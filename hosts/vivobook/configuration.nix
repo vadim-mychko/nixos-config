@@ -50,7 +50,7 @@
     ];
 
     fontconfig.defaultFonts = {
-      monospace = [ "JetBrains Mono" "MesloLGS NF" ];
+      monospace = [ "JetBrains Mono NL" "MesloLGS NF" ];
       serif = [ "Noto Serif" ];
       sansSerif = [ "Noto Sans" ];
       emoji = [ "Noto Color Emoji" ];
