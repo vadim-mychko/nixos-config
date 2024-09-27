@@ -32,6 +32,9 @@
     zip
     unzip
     kitty
+    imagemagick
+    poppler
+    texliveFull
   ];
 
   # ================================= LOCALE ==================================

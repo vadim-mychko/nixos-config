@@ -362,4 +362,12 @@ vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "[E]xplo
 vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[E]xplorer [R]efresh" })
 
 -- ================================== MOLTEN ==================================
-require("image").setup({})
+require("image").setup({
+  backend = "kitty",
+  max_width = 100,
+  max_height = 12,
+  max_height_window_percentage = math.huge,
+  max_width_window_percentage = math.huge,
+  window_overlap_clear_enabled = true,
+  window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+})

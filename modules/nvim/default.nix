@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     neovim
-    imagemagick
     nil
     lua-language-server
     basedpyright
@@ -23,6 +22,7 @@
       cairosvg
       pnglatex
       plotly
+      kaleido
       pyperclip
       nbformat
       pillow
