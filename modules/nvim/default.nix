@@ -17,7 +17,7 @@
     withRuby = false;
     withNodeJs = false;
 
-    extraPython3Packages = p: with p; [
+    extraPython3Packages = ps: with ps; [
       pynvim
       jupyter-client
       cairosvg
@@ -29,7 +29,7 @@
       pillow
     ];
 
-    extraLuaPackages = p: with p; [
+    extraLuaPackages = ps: with ps; [
       magick
     ];
 
