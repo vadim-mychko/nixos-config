@@ -59,7 +59,6 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- ================================= GREETER ==================================
-local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
   "                                                     ",
@@ -80,12 +79,11 @@ dashboard.section.buttons.val = {
   dashboard.button("q", "  > Quit Neovim", "<cmd>qa<CR>"),
 }
 
-alpha.setup(dashboard.opts)
+require("alpha").setup(dashboard.opts)
 vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 
 -- ================================ TREESITTER ================================
-local treesitter = require("nvim-treesitter.configs")
-treesitter.setup({
+require("treesitter").setup({
   highlight = { enable = true },
   indent = { enable = true },
 })
@@ -135,15 +133,13 @@ cmp.setup({
 })
 
 -- ============================ INDENTATION GUIDES ============================
-local indentation = require("ibl")
-indentation.setup({
+require("ibl").setup({
   scope = { enabled = false },
   indent = { char = "│" },
 })
 
 -- ================================ AUTOPAIRS =================================
-local autopairs = require("nvim-autopairs")
-autopairs.setup({
+require("autopairs").setup({
   check_ts = true,
   ts_config = {
     lua = { "string" },
@@ -152,12 +148,10 @@ autopairs.setup({
   },
 })
 
-local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+cmp.event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done())
 
 -- =============================== STATUS LINE ================================
-local lualine = require("lualine")
-lualine.setup({
+require("lualine").setup({
   options = {
     icons_enabled = false,
     component_separators = "",
@@ -275,8 +269,7 @@ vim.keymap.set({"n", "i"}, "<M-9>", function() harpoon:list():select(9) end)
 vim.keymap.set("n", "<leader>ts", "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>", { desc = "Undo[T]ree [S]how" })
 
 -- =============================== AUTOSESSIONS ===============================
-local auto_session = require("auto-session")
-auto_session.setup({})
+require("auto_session").setup({})
 
 vim.keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "[W]orkspace [S]ave" })
 vim.keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "[W]orkspace [R]estore" })
@@ -341,8 +334,7 @@ vim.keymap.set("n", "<leader>hR", gitsigns.reset_buffer, { desc = "[H]unk [R]ese
 vim.keymap.set("n", "<leader>hU", gitsigns.reset_buffer_index, { desc = "[H]unk [R]estore buffer" })
 
 -- =============================== DIAGNOSTICS ================================
-local trouble = require("trouble")
-trouble.setup({
+require("trouble").setup({
   focus = true,
 })
 
@@ -352,11 +344,8 @@ vim.keymap.set("n", "<leader>tq", "<cmd>Trouble quickfix toggle<CR>", { desc = "
 vim.keymap.set("n", "<leader>tl", "<cmd>Trouble loclist toggle<CR>", { desc = "[T]rouble [L]ocations" })
 
 -- ============================== FILE EXPLORER ===============================
-local nvim_tree = require("nvim-tree")
-local dressing = require("dressing")
-
-dressing.setup({})
-nvim_tree.setup({
+require("dressing").setup({})
+require("nvim_tree").setup({
   view = { width = 35, relativenumber = true },
   actions = {
     open_file = {
@@ -371,3 +360,6 @@ vim.keymap.set("n", "<leader>et", "<cmd>NvimTreeToggle<CR>", { desc = "[E]xplore
 vim.keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "[E]xplorer [F]ind" })
 vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "[E]xplorer [C]ollapse" })
 vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[E]xplorer [R]efresh" })
+
+-- ================================== MOLTEN ==================================
+require("image").setup({})

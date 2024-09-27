@@ -2,6 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
+    neovim
+    imagemagick
     nil
     lua-language-server
     basedpyright
@@ -10,8 +12,26 @@
     ltex-ls
   ];
 
-  programs.neovim = {
-    enable = true;
+  nixpkgs.overlays = [(final: prev: { neovim = prev.neovim.override {
+    withPython3 = true;
+    withRuby = false;
+    withNodeJs = false;
+
+    extraPython3Packages = p: with p; [
+      pynvim
+      jupyter-client
+      cairosvg
+      pnglatex
+      plotly
+      pyperclip
+      nbformat
+      pillow
+    ];
+
+    extraLuaPackages = p: with p; [
+      magick
+    ];
+
     configure.packages.myVimPackage.start = with pkgs.vimPlugins; [
       modus-themes-nvim
       nvim-lspconfig
@@ -45,6 +65,8 @@
       trouble-nvim
       nvim-tree-lua
       dressing-nvim
+      molten-nvim
+      image-nvim
     ];
 
     configure.customRC = ''
@@ -52,5 +74,5 @@
       ${builtins.readFile ./init.lua}
       EOF
     '';
-  };
+  };})];
 }
