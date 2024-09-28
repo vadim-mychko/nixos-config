@@ -35,6 +35,7 @@
     imagemagick
     texliveFull
     quarto
+    zotero
   ];
 
   programs.direnv = {
