@@ -10,7 +10,6 @@
     clang-tools
     ltex-ls
     vale
-    rPackages.languageserver
   ];
 
   nixpkgs.overlays = [(final: prev: { neovim = prev.neovim.override {
