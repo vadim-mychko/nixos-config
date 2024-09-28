@@ -362,7 +362,34 @@ vim.keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "[
 vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "[E]xplorer [C]ollapse" })
 vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[E]xplorer [R]efresh" })
 
--- ================================== MOLTEN ==================================
+-- ============================= QUARTO & JUPYTER =============================
+require("jupytext").setup({
+  custom_language_formatting = {
+    python = {
+      extension = "qmd",
+      style = "quarto",
+      force_ft = "quarto",
+    },
+  },
+})
+
+require("quarto").setup({
+  lspFeatures = {
+    languages = { "python" },
+    chunks = "all",
+    completion = { enabled = true },
+    diagnostics = {
+      enabled = true,
+      triggers = { "BufWritePost" }
+    },
+  },
+
+  codeRunner = {
+    enabled = true,
+    default_method = "molten",
+  },
+})
+
 require("image").setup({
   backend = "kitty",
   max_width = 100,
@@ -372,3 +399,15 @@ require("image").setup({
   window_overlap_clear_enabled = true,
   window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
 })
+
+vim.g.molten_image_provider = "image.nvim";
+vim.g.molten_auto_image_popup = true;
+
+vim.keymap.set("n", "<leader>mi", "<cmd>MoltenInit<CR>", { desc = "[M]olten [I]nit" })
+vim.keymap.set("n", "<leader>me", "<cmd>MoltenEvaluateOperator<CR>", { desc = "[M]olten [E]valuate" })
+vim.keymap.set("n", "<leader>ms", "<cmd>noautocmd MoltenEnterOutput<CR>", { desc = "[M]olten [S]how output" })
+vim.keymap.set("n", "<leader>mh", "<cmd>MoltenHideOutput<CR>", { desc = "[M]olten [H]ide output" })
+vim.keymap.set("n", "<leader>mr", "<cmd>MoltenReevaluateCell<CR>", { desc = "[M]olten [R]e-evaluate cell" })
+vim.keymap.set("v", "<leader>me", "<cmd><C-u>MoltenEvaluateVisual<CR>gv", { desc = "[M]olten [E]valuate (visual)" })
+vim.keymap.set("n", "<leader>mn", "<cmd>MoltenNext<CR>", { desc = "[M]olten [N]ext cell" })
+vim.keymap.set("n", "<leader>mN", "<cmd>MoltenPrev<CR>", { desc = "[M]olten [N]ext backwards" })

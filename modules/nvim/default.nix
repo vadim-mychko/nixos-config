@@ -68,6 +68,9 @@
       dressing-nvim
       molten-nvim
       image-nvim
+      jupytext-nvim
+      otter-nvim
+      quarto-nvim
     ];
 
     configure.customRC = ''
