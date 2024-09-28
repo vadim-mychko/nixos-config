@@ -421,3 +421,5 @@ vim.keymap.set("n", "<leader>ms", ":noautocmd MoltenEnterOutput<CR>", { desc = "
 vim.keymap.set("n", "<leader>mh", "<cmd>MoltenHideOutput<CR>", { desc = "[M]olten [H]ide output" })
 vim.keymap.set("n", "<leader>mn", "<cmd>MoltenNext<CR>", { desc = "[M]olten [N]ext" })
 vim.keymap.set("n", "<leader>mN", "<cmd>MoltenPrev<CR>", { desc = "[M]olten [N]ext backwards" })
+vim.keymap.set("n", "<leader>mi", "<cmd>MoltenInit<CR>", { desc = "[M]olten [I]nit" })
+vim.keymap.set("n", "<leader>mr", "<cmd>MoltenRestart!<CR>", { desc = "[M]olten [R]estart" })
