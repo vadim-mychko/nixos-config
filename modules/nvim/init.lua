@@ -16,7 +16,7 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.shiftround = true
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.termguicolors = true
 vim.opt.backspace = "indent,eol,start"
 vim.opt.mouse = "a"
@@ -205,17 +205,17 @@ lspconfig.basedpyright.setup({
   capabilities = capabilities,
 })
 
-lspconfig.ltex.setup({
-  capabilities = capabilities,
-  settings = {
-    ltex = {
-      language = "en",
-      additionalRules = {
-        languageModel = "~/ngrams/",
-      },
-    },
-  },
-})
+-- lspconfig.ltex.setup({
+--   capabilities = capabilities,
+--   settings = {
+--     ltex = {
+--       language = "en",
+--       additionalRules = {
+--         languageModel = "~/ngrams/",
+--       },
+--     },
+--   },
+-- })
 
 lspconfig.clangd.setup({
   capabilities = capabilities,
@@ -301,7 +301,7 @@ lint.linters_by_ft = {
   nix = { "nix" },
   c = { "clang-tidy" },
   cpp = { "clang-tidy" },
-  markdown = { "vale" },
+  -- markdown = { "vale" },
 }
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
@@ -386,6 +386,8 @@ vim.g.molten_wrap_output = true
 vim.g.molten_virt_text_output = true
 vim.g.molten_virt_lines_off_by_1 = true
 
+vim.g.slime_target = "tmux"
+
 require("image").setup({
   backend = "kitty",
   max_width = 100,
@@ -411,7 +413,10 @@ require("quarto").setup({
 
   codeRunner = {
     enabled = true,
-    default_method = "molten",
+    ft_runners = {
+      python = "molten",
+      r = "slime",
+    },
   },
 })
 

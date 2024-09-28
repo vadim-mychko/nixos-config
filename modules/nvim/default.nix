@@ -70,6 +70,7 @@
       image-nvim
       otter-nvim
       quarto-nvim
+      vim-slime
     ];
 
     configure.customRC = ''
