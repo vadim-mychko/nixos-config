@@ -205,17 +205,17 @@ lspconfig.basedpyright.setup({
   capabilities = capabilities,
 })
 
--- lspconfig.ltex.setup({
---   capabilities = capabilities,
---   settings = {
---     ltex = {
---       language = "en",
---       additionalRules = {
---         languageModel = "~/ngrams/",
---       },
---     },
---   },
--- })
+lspconfig.ltex.setup({
+  capabilities = capabilities,
+  settings = {
+    ltex = {
+      language = "en",
+      additionalRules = {
+        languageModel = "~/ngrams/",
+      },
+    },
+  },
+})
 
 lspconfig.clangd.setup({
   capabilities = capabilities,
@@ -301,7 +301,7 @@ lint.linters_by_ft = {
   nix = { "nix" },
   c = { "clang-tidy" },
   cpp = { "clang-tidy" },
-  -- markdown = { "vale" },
+  markdown = { "vale" },
 }
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
