@@ -132,6 +132,19 @@ cmp.setup({
   }),
 })
 
+-- ================================= SNIPPETS =================================
+local pyblock = {
+  luasnip.snippet("pyblock", {
+    luasnip.text_node({ "```{python}", "" }),
+    luasnip.insert_node(0),
+    luasnip.text_node({ "", "```" }),
+  })
+}
+
+for _, ft in ipairs({ "quarto", "markdown" }) do
+  luasnip.add_snippets(ft, pyblock)
+end
+
 -- ============================ INDENTATION GUIDES ============================
 require("ibl").setup({
   scope = { enabled = false },
@@ -363,7 +376,10 @@ vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "[E]xplo
 vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[E]xplorer [R]efresh" })
 
 -- ============================= QUARTO & JUPYTER =============================
-vim.g.molten_image_provider = "image.nvim";
+vim.g.molten_image_provider = "image.nvim"
+vim.g.molten_auto_open_output = false
+vim.g.molten_virt_text_output = true
+vim.g.molten_virt_lines_off_by_1 = true
 
 require("image").setup({
   backend = "kitty",
@@ -373,16 +389,6 @@ require("image").setup({
   max_width_window_percentage = math.huge,
   window_overlap_clear_enabled = true,
   window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
-})
-
-require("jupytext").setup({
-  custom_language_formatting = {
-    python = {
-      extension = "qmd",
-      style = "quarto",
-      force_ft = "quarto",
-    },
-  },
 })
 
 require("quarto").setup({
@@ -401,3 +407,5 @@ require("quarto").setup({
     default_method = "molten",
   },
 })
+
+vim.keymap.set("n", "<leader>ms", ":noautocmd MoltenEnterOutput<CR>", { desc = "[M]olten [S]how output" })
