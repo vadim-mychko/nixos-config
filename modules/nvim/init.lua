@@ -400,7 +400,7 @@ require("quarto").setup({
   closePreviewOnExit = true,
   lspFeatures = {
     enabled = true,
-    languages = { "python" },
+    languages = { "python", "r" },
     chunks = "all",
     completion = { enabled = true },
     diagnostics = {
