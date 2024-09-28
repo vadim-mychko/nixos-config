@@ -378,8 +378,6 @@ vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[E]xplor
 -- ============================= QUARTO & JUPYTER =============================
 vim.g.molten_image_provider = "image.nvim"
 vim.g.molten_auto_open_output = false
-vim.g.molten_virt_text_output = true
-vim.g.molten_virt_lines_off_by_1 = true
 
 require("image").setup({
   backend = "kitty",
@@ -417,3 +415,4 @@ vim.keymap.set("n", "<leader>rl", runner.run_line, { desc = "[R]un [L]ine" })
 vim.keymap.set("n", "<leader>ra", runner.run_above, { desc = "[R]un [A]bove" })
 vim.keymap.set("n", "<leader>rA", runner.run_all, { desc = "[R]un [A]ll" })
 vim.keymap.set("n", "<leader>ms", ":noautocmd MoltenEnterOutput<CR>", { desc = "[M]olten [S]how output" })
+vim.keymap.set("n", "<leader>mh", "<cmd>MoltenHideOutput<CR>", { desc = "[M]olten [H]ide output" })
