@@ -221,6 +221,10 @@ lspconfig.clangd.setup({
   capabilities = capabilities,
 })
 
+lspconfig.r_language_server.setup({
+  capabilities = capabilities,
+})
+
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
 telescope.setup({
