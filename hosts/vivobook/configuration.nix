@@ -10,7 +10,6 @@
 
   environment.systemPackages = with pkgs; [
     firefox
-    vscode
     telegram-desktop
     zoxide
     fzf
@@ -36,6 +35,9 @@
     texliveFull
     quarto
     zotero
+    tree
+    poppler_utils
+    netpbm
   ];
 
   programs.direnv = {

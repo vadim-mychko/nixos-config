@@ -386,8 +386,6 @@ vim.g.molten_wrap_output = true
 vim.g.molten_virt_text_output = true
 vim.g.molten_virt_lines_off_by_1 = true
 
-vim.g.slime_target = "tmux"
-
 require("image").setup({
   backend = "kitty",
   max_width = 100,
