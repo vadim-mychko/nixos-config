@@ -426,6 +426,7 @@ vim.keymap.set("v", "<leader>rc", runner.run_range, { desc = "[R]un [C]ell (visu
 vim.keymap.set("n", "<leader>rl", runner.run_line, { desc = "[R]un [L]ine" })
 vim.keymap.set("n", "<leader>ra", runner.run_above, { desc = "[R]un [A]bove" })
 vim.keymap.set("n", "<leader>rA", runner.run_all, { desc = "[R]un [A]ll" })
+
 vim.keymap.set("n", "<leader>ms", ":noautocmd MoltenEnterOutput<CR>", { desc = "[M]olten [S]how output" })
 vim.keymap.set("n", "<leader>mh", "<cmd>MoltenHideOutput<CR>", { desc = "[M]olten [H]ide output" })
 vim.keymap.set("n", "<leader>mn", "<cmd>MoltenNext<CR>", { desc = "[M]olten [N]ext" })
