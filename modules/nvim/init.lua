@@ -413,10 +413,7 @@ require("quarto").setup({
 
   codeRunner = {
     enabled = true,
-    ft_runners = {
-      python = "molten",
-      r = "slime",
-    },
+    default_method = "molten",
   },
 })
 
