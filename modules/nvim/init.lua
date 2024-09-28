@@ -392,7 +392,9 @@ require("image").setup({
 })
 
 require("quarto").setup({
+  closePreviewOnExit = true,
   lspFeatures = {
+    enabled = true,
     languages = { "python" },
     chunks = "all",
     completion = { enabled = true },
@@ -408,4 +410,10 @@ require("quarto").setup({
   },
 })
 
+local runner = require("quarto.runner")
+vim.keymap.set("n", "<leader>rc", runner.run_cell, { desc = "[R]un [C]ell" })
+vim.keymap.set("v", "<leader>rc", runner.run_range, { desc = "[R]un [C]ell (visual)" })
+vim.keymap.set("n", "<leader>rl", runner.run_line, { desc = "[R]un [L]ine" })
+vim.keymap.set("n", "<leader>ra", runner.run_above, { desc = "[R]un [A]bove" })
+vim.keymap.set("n", "<leader>rA", runner.run_all, { desc = "[R]un [A]ll" })
 vim.keymap.set("n", "<leader>ms", ":noautocmd MoltenEnterOutput<CR>", { desc = "[M]olten [S]how output" })
