@@ -33,7 +33,6 @@
     unzip
     kitty
     imagemagick
-    poppler
     texliveFull
     quarto
   ];
