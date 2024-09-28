@@ -364,7 +364,6 @@ vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[E]xplor
 
 -- ============================= QUARTO & JUPYTER =============================
 vim.g.molten_image_provider = "image.nvim";
-vim.g.molten_auto_image_popup = false;
 
 require("image").setup({
   backend = "kitty",
