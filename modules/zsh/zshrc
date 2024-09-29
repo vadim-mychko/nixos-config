@@ -21,6 +21,7 @@ export EDITOR='nvim'
 export BAT_THEME='modus_vivendi'
 export BAT_PAGER='less -+F'
 export MANPAGER='nvim +Man!'
+export XCURSOR_THEME=Adwaita
 export LESS=
 
 # ================================= FUNCTIONS =================================
