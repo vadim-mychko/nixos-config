@@ -7,5 +7,6 @@
     ./sway
     ./tmux
     ./zsh
+    ./wezterm
   ];
 }
