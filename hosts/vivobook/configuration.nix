@@ -38,6 +38,7 @@
     tree
     poppler_utils
     netpbm
+    wezterm
   ];
 
   programs.direnv = {
