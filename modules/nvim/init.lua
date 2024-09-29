@@ -396,6 +396,12 @@ require("image").setup({
   window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
 })
 
+require("otter").setup({
+  buffers = {
+    write_to_disk = true,
+  },
+})
+
 require("quarto").setup({
   closePreviewOnExit = true,
   lspFeatures = {
