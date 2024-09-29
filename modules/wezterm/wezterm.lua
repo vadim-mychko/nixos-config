@@ -25,7 +25,7 @@ config.keys = {
   { key = "n",          mods = "CTRL",         action=wezterm.action{SpawnTab="CurrentPaneDomain"}},
   { key = ";",          mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
   { key = "'",          mods = "LEADER",       action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
-  { key = "z",          mods = "CTRL",       action="TogglePaneZoomState"},
+  { key = "z",          mods = "CTRL",         action="TogglePaneZoomState"},
   { key = "v",          mods = "LEADER",       action=wezterm.action.ActivateCopyMode},
   { key = ":",          mods = "LEADER|SHIFT", action=wezterm.action.ActivateCommandPalette},
   { key = "1",          mods = "LEADER",       action=wezterm.action{ActivateTab=0}},
