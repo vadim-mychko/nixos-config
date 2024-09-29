@@ -380,11 +380,11 @@ vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "[E]xplo
 vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[E]xplorer [R]efresh" })
 
 -- ============================= QUARTO & JUPYTER =============================
-vim.g.molten_image_provider = "image.nvim"
+-- vim.g.molten_image_provider = "image.nvim"
 vim.g.molten_auto_open_output = false
 vim.g.molten_wrap_output = true
-vim.g.molten_virt_text_output = true
-vim.g.molten_virt_lines_off_by_1 = true
+-- vim.g.molten_virt_text_output = true
+-- vim.g.molten_virt_lines_off_by_1 = true
 
 require("image").setup({
   backend = "kitty",
@@ -429,6 +429,7 @@ vim.keymap.set("n", "<leader>ra", runner.run_above, { desc = "[R]un [A]bove" })
 vim.keymap.set("n", "<leader>rA", runner.run_all, { desc = "[R]un [A]ll" })
 
 vim.keymap.set("n", "<leader>ms", ":noautocmd MoltenEnterOutput<CR>", { desc = "[M]olten [S]how output" })
+vim.keymap.set("n", "<leader>mp", "<cmd>MoltenImagePopup<CR>", { desc = "[M]olten image [P]opup" })
 vim.keymap.set("n", "<leader>mh", "<cmd>MoltenHideOutput<CR>", { desc = "[M]olten [H]ide output" })
 vim.keymap.set("n", "<leader>mn", "<cmd>MoltenNext<CR>", { desc = "[M]olten [N]ext" })
 vim.keymap.set("n", "<leader>mN", "<cmd>MoltenPrev<CR>", { desc = "[M]olten [N]ext backwards" })
