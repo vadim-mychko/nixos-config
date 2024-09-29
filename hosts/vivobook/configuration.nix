@@ -32,7 +32,7 @@
     unzip
     kitty
     imagemagick
-    texliveMedium
+    texliveFull
     quarto
     zotero
     tree
