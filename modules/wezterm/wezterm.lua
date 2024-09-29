@@ -7,7 +7,7 @@ wezterm.on("gui-startup", function()
   window:gui_window():maximize()
 end)
 
-config.tab_bar_at_bottom = true
+config.hide_mouse_cursor_when_typing = false
 config.window_decorations = "RESIZE"
 config.color_scheme = "Modus Vivendi"
 config.font_size = 14.0
