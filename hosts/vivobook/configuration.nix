@@ -38,7 +38,6 @@
     tree
     poppler_utils
     netpbm
-    sxiv
   ];
 
   programs.direnv = {

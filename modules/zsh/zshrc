@@ -8,6 +8,7 @@ alias vim='nvim'
 alias vimdiff='nvim -d'
 alias lg='lazygit'
 alias cat='bat'
+alias sxiv='sxiv --reuse'
 
 alias ga='git add'
 alias gs='git status'
