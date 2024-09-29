@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, ... }:
 
 {
   imports = [
@@ -38,7 +38,7 @@
     tree
     poppler_utils
     netpbm
-    wezterm
+    inputs.wezterm.packages.${pkgs.system}.default
   ];
 
   programs.direnv = {
