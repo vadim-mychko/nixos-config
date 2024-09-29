@@ -7,6 +7,9 @@ wezterm.on("gui-startup", function()
   window:gui_window():maximize()
 end)
 
+config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = false
+config.window_padding = { bottom = 0 }
 config.hide_mouse_cursor_when_typing = false
 config.window_decorations = "RESIZE"
 config.color_scheme = "Modus Vivendi"
@@ -22,7 +25,7 @@ config.keys = {
   { key = "n",          mods = "CTRL",         action=wezterm.action{SpawnTab="CurrentPaneDomain"}},
   { key = ";",          mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
   { key = "'",          mods = "LEADER",       action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
-  { key = "z",          mods = "LEADER",       action="TogglePaneZoomState"},
+  { key = "z",          mods = "CTRL",       action="TogglePaneZoomState"},
   { key = "v",          mods = "LEADER",       action=wezterm.action.ActivateCopyMode},
   { key = ":",          mods = "LEADER|SHIFT", action=wezterm.action.ActivateCommandPalette},
   { key = "1",          mods = "LEADER",       action=wezterm.action{ActivateTab=0}},
