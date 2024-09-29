@@ -1,6 +1,16 @@
 { pkgs, ... }:
 
-{
+let
+  wezterm-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "vimplugin-lua5.1-wezterm-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "willothy";
+      repo = "wezterm.nvim";
+      rev = "032c33b621b96cc7228955b4352b48141c482098";
+      hash = "sha256-q4PZUh4QdppeKGB0hytnZi2WBE6FRTcgieka6AnqQ5k=";
+    };
+  };
+in {
   environment.systemPackages = with pkgs; [
     neovim
     nil
@@ -70,6 +80,7 @@
       image-nvim
       otter-nvim
       quarto-nvim
+      wezterm-nvim
     ];
 
     configure.customRC = ''

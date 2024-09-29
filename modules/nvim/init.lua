@@ -380,11 +380,14 @@ vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "[E]xplo
 vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[E]xplorer [R]efresh" })
 
 -- ============================= QUARTO & JUPYTER =============================
--- vim.g.molten_image_provider = "image.nvim"
+vim.g.molten_image_provider = "wezterm"
+vim.g.molten_split_size = 40
 vim.g.molten_auto_open_output = false
 vim.g.molten_wrap_output = true
 vim.g.molten_virt_text_output = true
 vim.g.molten_virt_lines_off_by_1 = true
+
+require("wezterm").setup({})
 
 require("image").setup({
   backend = "kitty",
