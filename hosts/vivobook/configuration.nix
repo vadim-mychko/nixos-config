@@ -135,6 +135,8 @@
 
   networking.hostName = "vivobook";
   networking.networkmanager.enable = true;
+  networking.firewall.allowedTCPPorts = [ 3389 ];
+  networking.firewall.allowedUDPPorts = [ 3389 ];
 
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
