@@ -38,7 +38,6 @@
     tree
     poppler_utils
     netpbm
-    qview
   ];
 
   programs.direnv = {
