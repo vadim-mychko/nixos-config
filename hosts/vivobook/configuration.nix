@@ -46,6 +46,11 @@
     nix-direnv.enable = true;
   };
 
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
   # ================================= LOCALE ==================================
 
   time.timeZone = "Europe/Prague";
