@@ -46,9 +46,9 @@
     nix-direnv.enable = true;
   };
 
-  virtualisation.docker.rootless = {
+  virtualisation.podman = {
     enable = true;
-    setSocketVariable = true;
+    dockerCompat = true;
   };
 
   # ================================= LOCALE ==================================
@@ -149,7 +149,7 @@
   users.users.mychkvad = {
     isNormalUser = true;
     description = "Vadim Mychko";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "podman" ];
   };
 
   nixpkgs.config.allowUnfree = true;
