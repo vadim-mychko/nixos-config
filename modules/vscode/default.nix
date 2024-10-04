@@ -1,18 +1,14 @@
 { pkgs, ... }:
 
 let
-  basedpyright = pkgs.vscode-utils.extensionFromVscodeMarketplace {
-    name = "basedpyright";
-    publisher = "detachhead";
-    version = "1.18.3";
-    sha256 = "sha256-zOYxcw2NnIaIrdP2/xg5uIvGynmWpljTof/F+J/EXis=";
-  };
   vscode = pkgs.vscode-with-extensions.override {
     vscodeExtensions = with pkgs.vscode-extensions; [
-      basedpyright
       mkhl.direnv
       charliermarsh.ruff
       ms-toolsai.jupyter
+      valentjn.vscode-ltex
+      ms-python.python
+      ms-python.vscode-pylance
     ];
   };
 in {
