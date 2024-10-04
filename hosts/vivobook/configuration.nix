@@ -40,6 +40,7 @@
     netpbm
     libreoffice
     discord
+    octaveFull
   ];
 
   programs.direnv = {
