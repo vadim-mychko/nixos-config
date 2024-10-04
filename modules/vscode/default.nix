@@ -9,9 +9,10 @@ let
   };
   vscode = pkgs.vscode-with-extensions.override {
     vscodeExtensions = with pkgs.vscode-extensions; [
+      basedpyright
       mkhl.direnv
       charliermarsh.ruff
-      basedpyright
+      ms-toolsai.jupyter
     ];
   };
 in {
