@@ -39,6 +39,7 @@
     poppler_utils
     netpbm
     libreoffice
+    discord
   ];
 
   programs.direnv = {
