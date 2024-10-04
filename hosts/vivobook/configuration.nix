@@ -116,6 +116,7 @@
 
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
+    NIXOS_OZONE_WL = "1";
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];

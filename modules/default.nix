@@ -8,5 +8,6 @@
     ./tmux
     ./zsh
     ./wezterm
+    ./vscode
   ];
 }
