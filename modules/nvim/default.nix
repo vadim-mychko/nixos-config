@@ -10,19 +10,7 @@ let
       hash = "sha256-q4PZUh4QdppeKGB0hytnZi2WBE6FRTcgieka6AnqQ5k=";
     };
   };
-in {
-  environment.systemPackages = with pkgs; [
-    neovim
-    nil
-    lua-language-server
-    basedpyright
-    ruff
-    clang-tools
-    ltex-ls
-    vale
-  ];
-
-  nixpkgs.overlays = [(final: prev: { neovim = prev.neovim.override {
+  neovim = pkgs.neovim.override {
     withPython3 = true;
     withRuby = false;
     withNodeJs = false;
@@ -88,5 +76,16 @@ in {
       ${builtins.readFile ./init.lua}
       EOF
     '';
-  };})];
+  };
+in {
+  environment.systemPackages = with pkgs; [
+    neovim
+    nil
+    lua-language-server
+    basedpyright
+    ruff
+    clang-tools
+    ltex-ls
+    vale
+  ];
 }
