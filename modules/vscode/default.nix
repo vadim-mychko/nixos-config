@@ -27,7 +27,6 @@ let
       ms-python.python
       ms-python.vscode-pylance
       njpwerner.autodocstring
-      vscodevim.vim
       reditorsupport.r
       usernamehw.errorlens
       christian-kohler.path-intellisense
