@@ -34,6 +34,7 @@
     imagemagick
     texliveFull
     quarto
+    pandoc
     zotero
     tree
     poppler_utils
