@@ -17,6 +17,10 @@ let
       ms-python.python
       ms-python.vscode-pylance
       vscodevim.vim
+      reditorsupport.r
+      usernamehw.errorlens
+      christian-kohler.path-intellisense
+      ms-vscode.live-server
     ];
   };
 in {
