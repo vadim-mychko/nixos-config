@@ -21,6 +21,7 @@ let
       usernamehw.errorlens
       christian-kohler.path-intellisense
       ms-vscode.live-server
+      tomoki1207.pdf
     ];
   };
 in {
