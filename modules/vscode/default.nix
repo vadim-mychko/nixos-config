@@ -33,6 +33,7 @@ let
       christian-kohler.path-intellisense
       ms-vscode.live-server
       tomoki1207.pdf
+      github.github-vscode-theme
     ];
   };
 in {
