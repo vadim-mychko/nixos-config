@@ -11,7 +11,7 @@ let
     name = "vsc-python-indent";
     publisher = "KevinRose";
     version = "1.18.0";
-    sha256 = "";
+    sha256 = "sha256-hiOMcHiW8KFmau7WYli0pFszBBkb6HphZsz+QT5vHv0=";
   };
   vscode = pkgs.vscode-with-extensions.override {
     vscodeExtensions = with pkgs.vscode-extensions; [
