@@ -203,6 +203,16 @@ lspconfig.lua_ls.setup({
 
 lspconfig.basedpyright.setup({
   capabilities = capabilities,
+  settings = {
+    basedpyright = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "openFilesOnly",
+        useLibraryCodeForTypes = true,
+        typeCheckingMode = "off",
+      },
+    },
+  },
 })
 
 lspconfig.ltex.setup({
