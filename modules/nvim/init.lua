@@ -263,6 +263,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<leader>rn", vim.lsp.buf.rename, "[R]e[N]ame")
     map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", {"n", "x"})
     map("<leader>gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+    map("<leader>hd", vim.lsp.buf.hover, "[H]over [D]ocumnetation")
   end
 })
 
