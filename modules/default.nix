@@ -8,6 +8,5 @@
     ./zsh
     ./wezterm
     ./vscode
-    ./R
   ];
 }

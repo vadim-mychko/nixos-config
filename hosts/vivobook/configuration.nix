@@ -26,7 +26,6 @@
     wl-clipboard
     zathura
     fastfetch
-    calibre
     qpdfview
     zip
     unzip
