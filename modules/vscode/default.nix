@@ -30,6 +30,7 @@ let
       usernamehw.errorlens
       christian-kohler.path-intellisense
       tomoki1207.pdf
+      mechatroner.rainbow-csv
     ];
   };
 in {
