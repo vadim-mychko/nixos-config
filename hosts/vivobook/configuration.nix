@@ -40,7 +40,6 @@
     libreoffice
     discord
     octaveFull
-    calibre
   ];
 
   programs.direnv = {
