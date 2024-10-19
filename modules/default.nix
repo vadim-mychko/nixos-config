@@ -7,6 +7,6 @@
     ./zsh
     ./wezterm
     ./vscode
-    ./calibre/
+    ./calibre
   ];
 }
