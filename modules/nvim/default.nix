@@ -1,35 +1,10 @@
 { pkgs, ... }:
 
 let
-  wezterm-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "vimplugin-lua5.1-wezterm-nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "willothy";
-      repo = "wezterm.nvim";
-      rev = "032c33b621b96cc7228955b4352b48141c482098";
-      hash = "sha256-q4PZUh4QdppeKGB0hytnZi2WBE6FRTcgieka6AnqQ5k=";
-    };
-  };
   neovim = pkgs.neovim.override {
-    withPython3 = true;
+    withPython3 = false;
     withRuby = false;
     withNodeJs = false;
-
-    extraPython3Packages = ps: with ps; [
-      pynvim
-      jupyter-client
-      cairosvg
-      pnglatex
-      plotly
-      kaleido
-      pyperclip
-      nbformat
-      pillow
-    ];
-
-    extraLuaPackages = ps: with ps; [
-      magick
-    ];
 
     configure.packages.myVimPackage.start = with pkgs.vimPlugins; [
       modus-themes-nvim
@@ -64,11 +39,6 @@ let
       trouble-nvim
       nvim-tree-lua
       dressing-nvim
-      molten-nvim
-      image-nvim
-      otter-nvim
-      quarto-nvim
-      wezterm-nvim
     ];
 
     configure.customRC = ''

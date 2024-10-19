@@ -24,22 +24,14 @@
     tlrc
     eza
     wl-clipboard
-    zathura
-    fastfetch
     qpdfview
     zip
     unzip
-    kitty
-    imagemagick
     texliveFull
     quarto
-    zotero
     tree
-    poppler_utils
-    netpbm
     libreoffice
     discord
-    octaveFull
   ];
 
   programs.direnv = {
