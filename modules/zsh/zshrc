@@ -56,7 +56,6 @@ function print-colormap() {
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # ================================== HISTORY ==================================
 HISTSIZE=10000
@@ -100,10 +99,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --follow --exclude .git"
 export FZF_CTRL_T_OPTS="--preview '$fzf_preview'"
 export FZF_ALT_C_OPTS="--preview 'eza -T -L=2 --color=always {}'"
-
-fzf () {
-  fzf-tmux -p "$@"
-}
 
 _fzf_compgen_path() {
   fd --hidden --follow --exclude .git . "$1"
