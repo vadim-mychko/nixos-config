@@ -32,6 +32,7 @@
     tree
     libreoffice
     discord
+    zotero
   ];
 
   programs.direnv = {
