@@ -33,6 +33,7 @@
     libreoffice
     discord
     zotero
+    jetbrains.pycharm-professional
   ];
 
   programs.direnv = {
