@@ -310,8 +310,6 @@ local lint = require("lint")
 lint.linters_by_ft = {
   python = { "ruff" },
   nix = { "nix" },
-  c = { "clangtidy" },
-  cpp = { "clangtidy" },
   markdown = { "vale" },
 }
 
