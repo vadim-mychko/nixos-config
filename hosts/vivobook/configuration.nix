@@ -34,6 +34,7 @@
     discord
     zotero
     jetbrains.pycharm-professional
+    google-chrome
   ];
 
   programs.direnv = {
