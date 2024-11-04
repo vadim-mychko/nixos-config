@@ -7,12 +7,14 @@ let
     version = "1.116.0";
     sha256 = "sha256-AwxBN4bu6EfCnozoDcM9BG8NGuG/1iaas7feLwgRC+w=";
   };
+
   python-indent = pkgs.vscode-utils.extensionFromVscodeMarketplace {
     name = "vsc-python-indent";
     publisher = "KevinRose";
     version = "1.18.0";
     sha256 = "sha256-hiOMcHiW8KFmau7WYli0pFszBBkb6HphZsz+QT5vHv0=";
   };
+
   vscode = pkgs.vscode-with-extensions.override {
     vscodeExtensions = with pkgs.vscode-extensions; [
       quarto
@@ -31,6 +33,7 @@ let
       christian-kohler.path-intellisense
       tomoki1207.pdf
       mechatroner.rainbow-csv
+      catppuccin.catppuccin-vsc
     ];
   };
 in {
