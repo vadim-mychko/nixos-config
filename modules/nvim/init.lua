@@ -237,6 +237,7 @@ lspconfig.r_language_server.setup({
 
 lspconfig.tinymist.setup({
   capabilities = capabilities,
+  single_file_support = true,
 })
 
 -- ================================ TELESCOPE =================================
