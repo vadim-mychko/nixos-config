@@ -72,7 +72,7 @@ dashboard.section.header.val = {
 }
 
 dashboard.section.buttons.val = {
-  dashboard.button( "e", "  > New file" , "<cmd>ene<CR>"),
+  dashboard.button("e", "  > New file", "<cmd>ene<CR>"),
   dashboard.button("SPC sf", "  > [S]earch [F]ile", "<cmd>Telescope find_files<CR>"),
   dashboard.button("SPC sg", "  > [S]earch [G]rep", "<cmd>Telescope live_grep<CR>"),
   dashboard.button("SPC wr", "󰁯  > [W]orkspace [R]estore", "<cmd>SessionRestore<CR>"),
@@ -235,6 +235,10 @@ lspconfig.r_language_server.setup({
   capabilities = capabilities,
 })
 
+lspconfig.tinymist.setup({
+  capabilities = capabilities,
+})
+
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
 telescope.setup({
@@ -271,7 +275,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<leader>ds", builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
     map("<leader>ws", builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
     map("<leader>rn", vim.lsp.buf.rename, "[R]e[N]ame")
-    map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", {"n", "x"})
+    map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
     map("<leader>gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
     map("<leader>hd", vim.lsp.buf.hover, "[H]over [D]ocumnetation")
   end
@@ -283,15 +287,15 @@ harpoon:setup()
 
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-vim.keymap.set({"n", "i"}, "<M-1>", function() harpoon:list():select(1) end)
-vim.keymap.set({"n", "i"}, "<M-2>", function() harpoon:list():select(2) end)
-vim.keymap.set({"n", "i"}, "<M-3>", function() harpoon:list():select(3) end)
-vim.keymap.set({"n", "i"}, "<M-4>", function() harpoon:list():select(4) end)
-vim.keymap.set({"n", "i"}, "<M-5>", function() harpoon:list():select(5) end)
-vim.keymap.set({"n", "i"}, "<M-6>", function() harpoon:list():select(6) end)
-vim.keymap.set({"n", "i"}, "<M-7>", function() harpoon:list():select(7) end)
-vim.keymap.set({"n", "i"}, "<M-8>", function() harpoon:list():select(8) end)
-vim.keymap.set({"n", "i"}, "<M-9>", function() harpoon:list():select(9) end)
+vim.keymap.set({ "n", "i" }, "<M-1>", function() harpoon:list():select(1) end)
+vim.keymap.set({ "n", "i" }, "<M-2>", function() harpoon:list():select(2) end)
+vim.keymap.set({ "n", "i" }, "<M-3>", function() harpoon:list():select(3) end)
+vim.keymap.set({ "n", "i" }, "<M-4>", function() harpoon:list():select(4) end)
+vim.keymap.set({ "n", "i" }, "<M-5>", function() harpoon:list():select(5) end)
+vim.keymap.set({ "n", "i" }, "<M-6>", function() harpoon:list():select(6) end)
+vim.keymap.set({ "n", "i" }, "<M-7>", function() harpoon:list():select(7) end)
+vim.keymap.set({ "n", "i" }, "<M-8>", function() harpoon:list():select(8) end)
+vim.keymap.set({ "n", "i" }, "<M-9>", function() harpoon:list():select(9) end)
 
 -- ================================= UNDOTREE =================================
 vim.keymap.set("n", "<leader>ts", "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>", { desc = "Undo[T]ree [S]how" })
@@ -328,6 +332,8 @@ conform.setup({
     python = { "ruff_organize_imports", "ruff_format" },
     c = { "clang-format" },
     cpp = { "clang-format" },
+    typst = { "typstyle" },
+    lua = { "stylua" },
   },
 })
 
@@ -343,7 +349,7 @@ local format = function()
   })
 end
 
-vim.keymap.set({"n", "v"}, "<leader>fb", format, { desc = "[F]ormat [B]uffer" })
+vim.keymap.set({ "n", "v" }, "<leader>fb", format, { desc = "[F]ormat [B]uffer" })
 
 -- ================================ GIT SIGNS =================================
 local gitsigns = require("gitsigns")
@@ -387,3 +393,11 @@ vim.keymap.set("n", "<leader>et", "<cmd>NvimTreeToggle<CR>", { desc = "[E]xplore
 vim.keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "[E]xplorer [F]ind" })
 vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "[E]xplorer [C]ollapse" })
 vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[E]xplorer [R]efresh" })
+
+-- ================================== TYPST ===================================
+require("typst-preview").setup({
+  dependencies_bin = {
+    tinymist = "tinymist",
+    websocat = "websocat",
+  },
+})

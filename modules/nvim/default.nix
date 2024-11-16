@@ -39,6 +39,7 @@ let
       trouble-nvim
       nvim-tree-lua
       dressing-nvim
+      typst-preview-nvim
     ];
 
     configure.customRC = ''
@@ -57,5 +58,9 @@ in {
     clang-tools
     ltex-ls
     vale
+    tinymist
+    typstyle
+    stylua
+    websocat
   ];
 }
