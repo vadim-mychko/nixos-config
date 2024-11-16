@@ -33,7 +33,6 @@
     libreoffice
     discord
     zotero
-    jetbrains.pycharm-professional
     google-chrome
   ];
 
