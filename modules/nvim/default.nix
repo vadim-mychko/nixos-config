@@ -60,7 +60,6 @@ in {
     vale
     tinymist
     typstyle
-    stylua
     websocat
   ];
 }
