@@ -35,6 +35,7 @@
     zotero
     jetbrains.pycharm-professional
     google-chrome
+    calibre
   ];
 
   programs.direnv = {

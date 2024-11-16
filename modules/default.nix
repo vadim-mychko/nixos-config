@@ -7,7 +7,6 @@
     ./zsh
     ./wezterm
     ./vscode
-    ./calibre
     ./rstudio
   ];
 }
