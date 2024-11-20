@@ -39,6 +39,7 @@ let
       trouble-nvim
       nvim-tree-lua
       dressing-nvim
+      virt-column-nvim
     ];
 
     configure.customRC = ''
