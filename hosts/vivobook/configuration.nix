@@ -34,6 +34,7 @@
     discord
     zotero
     google-chrome
+    poppler_utils
   ];
 
   programs.direnv = {
