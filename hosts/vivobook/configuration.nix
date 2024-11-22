@@ -35,6 +35,7 @@
     zotero
     google-chrome
     poppler_utils
+    vlc
   ];
 
   programs.direnv = {
