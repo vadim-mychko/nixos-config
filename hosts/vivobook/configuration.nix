@@ -28,14 +28,13 @@
     zip
     unzip
     texliveFull
-    quarto
     tree
     libreoffice
     discord
     zotero
-    google-chrome
     poppler_utils
     vlc
+    fastfetch
   ];
 
   programs.direnv = {
