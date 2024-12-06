@@ -50,7 +50,7 @@
   # ================================= LOCALE ==================================
 
   time.timeZone = "Europe/Prague";
-  i18n.defaultLocale = "cz_CZ.UTF-8";
+  i18n.defaultLocale = "cs_CZ.UTF-8";
 
   # ================================== FONTS ==================================
 
