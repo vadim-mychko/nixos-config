@@ -405,7 +405,7 @@ vim.g.molten_auto_open_output = false
 vim.g.molten_image_provider = "wezterm"
 vim.g.molten_wrap_output = true
 vim.g.molten_split_direction = "right"
-vim.g.molten_split_size = 50
+vim.g.molten_split_size = 40
 
 vim.keymap.set("n", "<leader>mi", "<cmd>MoltenInit<CR>", { desc = "[M]olten [I]nit"})
 vim.keymap.set("n", "<leader>mh", "<cmd>MoltenHideOutput<CR>", { desc = "[M]olten [H]ide"})
