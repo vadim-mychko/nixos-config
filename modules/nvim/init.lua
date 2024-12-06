@@ -407,5 +407,10 @@ vim.g.molten_wrap_output = true
 vim.g.molten_split_direction = "right"
 vim.g.molten_split_size = 50
 
-vim.keymap.set("n", "<leader>rl", "<cmd>MoltenEvaluateLine<CR>", { desc = "[R]un [L]ine", silent =  true})
-vim.keymap.set("v", "<leader>rl", "<cmd><C-u>MoltenEvaluateVisual<CR>gv", { desc = "[R]un [L]ines", silent = true})
+vim.keymap.set("n", "<leader>mi", "<cmd>MoltenInit<CR>", { desc = "[M]olten [I]nit"})
+vim.keymap.set("n", "<leader>mh", "<cmd>MoltenHideOutput<CR>", { desc = "[M]olten [H]ide"})
+vim.keymap.set("n", "<leader>ms", "<cmd>noautocmd MoltenEnterOutput<CR>", { desc = "[M]olten [S]how"})
+vim.keymap.set("n", "<leader>rl", "<cmd>MoltenEvaluateLine<CR>", { desc = "[R]un [L]ine"})
+vim.keymap.set("v", "<leader>rl", "<cmd><C-u>MoltenEvaluateVisual<CR>gv", { desc = "[R]un [L]ine (visual)"})
+vim.keymap.set("n", "<leader>rr", "<cmd>MoltenReevaluateCell<CR>", { desc = "[R]e-[R]un cell"})
+vim.keymap.set("n", "<leader>r", "<cmd>MoltenEvaluateOperator<CR>", { desc = "[R]un + operator"})
