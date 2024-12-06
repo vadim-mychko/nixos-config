@@ -36,7 +36,6 @@
     vlc
     fastfetch
     calibre
-    notcurses
   ];
 
   programs.direnv = {
