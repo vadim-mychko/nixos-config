@@ -52,6 +52,12 @@
 
   time.timeZone = "Europe/Prague";
   i18n.defaultLocale = "cs_CZ.UTF-8";
+  i18n.supportedLocales = [
+    "C.UTF-8/UTF-8"
+    "en_US.UTF-8/UTF-8"
+    "en_GB.UTF-8/UTF-8"
+    "cs_CZ.UTF-8/UTF-8"
+  ];
 
   # ================================== FONTS ==================================
 
