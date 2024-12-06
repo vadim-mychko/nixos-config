@@ -8,6 +8,5 @@
     ./wezterm
     ./vscode
     ./rstudio
-    ./calibre
   ];
 }

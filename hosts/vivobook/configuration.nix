@@ -35,6 +35,7 @@
     poppler_utils
     vlc
     fastfetch
+    calibre
   ];
 
   programs.direnv = {
@@ -111,6 +112,7 @@
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    GSK_RENDERER = "ngl";
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -119,7 +121,7 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = true;
-    open = false;
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {
@@ -134,7 +136,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "vivobook";
   networking.networkmanager.enable = true;
