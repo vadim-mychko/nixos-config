@@ -6,6 +6,10 @@ let
     withRuby = false;
     withNodeJs = false;
 
+    extraLuaPackages = ps: with ps; [
+      magick
+    ];
+
     extraPython3Packages = ps: with ps; [
       jupyter-client
       cairosvg
@@ -70,5 +74,6 @@ in {
     clang-tools
     ltex-ls
     vale
+    imagemagick
   ];
 }

@@ -407,5 +407,5 @@ vim.g.molten_wrap_output = true
 vim.g.molten_split_direction = "right"
 vim.g.molten_split_size = 50
 
-vim.keymap.set("n", "<leader>rl", "<cmd>MoltenEvaluateLine<CR>", { desc = "[R]un [L]ine"})
-vim.keymap.set("v", "<leader>rl", "<cmd><C-u>MoltenEvaluateVisual<CR>gv", { desc = "[R]un [L]ines"})
+vim.keymap.set("n", "<leader>rl", "<cmd>MoltenEvaluateLine<CR>", { desc = "[R]un [L]ine", silent =  true})
+vim.keymap.set("v", "<leader>rl", "<cmd><C-u>MoltenEvaluateVisual<CR>gv", { desc = "[R]un [L]ines", silent = true})
