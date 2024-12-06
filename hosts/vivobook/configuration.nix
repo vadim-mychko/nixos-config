@@ -112,7 +112,6 @@
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
-    GSK_RENDERER = "ngl";
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -123,7 +122,7 @@
     powerManagement.finegrained = true;
     open = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     prime = {
       offload.enable = true;
       offload.enableOffloadCmd = true;
@@ -136,7 +135,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "vivobook";
   networking.networkmanager.enable = true;
