@@ -36,6 +36,7 @@
     vlc
     fastfetch
     calibre
+    notcurses
   ];
 
   programs.direnv = {
@@ -51,7 +52,7 @@
   # ================================= LOCALE ==================================
 
   time.timeZone = "Europe/Prague";
-  i18n.defaultLocale = "cs_CZ.UTF-8";
+  i18n.defaultLocale = "en_GB.UTF-8";
 
   # ================================== FONTS ==================================
 

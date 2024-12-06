@@ -40,6 +40,7 @@ let
       nvim-tree-lua
       dressing-nvim
       virt-column-nvim
+      vim-slime
     ];
 
     configure.customRC = ''
