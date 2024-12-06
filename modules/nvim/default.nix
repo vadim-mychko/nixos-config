@@ -2,9 +2,19 @@
 
 let
   neovim = pkgs.neovim.override {
-    withPython3 = false;
+    withPython3 = true;
     withRuby = false;
     withNodeJs = false;
+
+    extraPython3Packages = ps: with ps; [
+      jupyter-client
+      cairosvg
+      pnglatex
+      plotly
+      kaleido
+      pyperclip
+      nbformat
+    ];
 
     configure.packages.myVimPackage.start = with pkgs.vimPlugins; [
       modus-themes-nvim
@@ -40,6 +50,8 @@ let
       nvim-tree-lua
       dressing-nvim
       virt-column-nvim
+      wezterm-nvim
+      molten-nvim
     ];
 
     configure.customRC = ''

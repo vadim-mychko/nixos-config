@@ -399,3 +399,13 @@ require("virt-column").setup({
   char = '▕',
   virtcolumn = "88",
 })
+
+-- ================================== MOLTEN ==================================
+vim.g.molten_auto_open_output = false
+vim.g.molten_image_provider = "wezterm"
+vim.g.molten_wrap_output = true
+vim.g.molten_split_direction = "right"
+vim.g.molten_split_size = 50
+
+vim.keymap.set("n", "<leader>rl", "<cmd>MoltenEvaluateLine<CR>", { desc = "[R]un [L]ine"})
+vim.keymap.set("v", "<leader>rl", "<cmd><C-u>MoltenEvaluateVisual<CR>gv", { desc = "[R]un [L]ines"})
