@@ -60,5 +60,6 @@ in {
     clang-tools
     ltex-ls
     vale
+    typstyle
   ];
 }

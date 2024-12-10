@@ -334,6 +334,7 @@ conform.setup({
     c = { "clang-format" },
     cpp = { "clang-format" },
     typst = { "typstyle" },
+    latex = { "latexindent" },
   },
 })
 
