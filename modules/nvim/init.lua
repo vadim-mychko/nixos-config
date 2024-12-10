@@ -348,7 +348,7 @@ conform.formatters["clang-format"] = {
 }
 
 conform.formatters["latexindent"] = {
-  prepend_args = { "--local" },
+  prepend_args = { "--local", "--cruft=build"},
 }
 
 local format = function()
