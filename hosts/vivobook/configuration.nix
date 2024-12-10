@@ -36,6 +36,7 @@
     vlc
     fastfetch
     calibre
+    zathura
   ];
 
   programs.direnv = {
