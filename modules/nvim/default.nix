@@ -61,5 +61,7 @@ in {
     ltex-ls
     vale
     typstyle
+    yamlfmt
+    yaml-language-server
   ];
 }

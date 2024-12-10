@@ -240,6 +240,10 @@ lspconfig.tinymist.setup({
   single_file_support = true,
 })
 
+lspconfig.yamlls.setup({
+  capabilities = capabilities,
+})
+
 -- ================================ TELESCOPE =================================
 local telescope = require("telescope")
 telescope.setup({
@@ -334,12 +338,17 @@ conform.setup({
     c = { "clang-format" },
     cpp = { "clang-format" },
     typst = { "typstyle" },
-    latex = { "latexindent" },
+    tex = { "latexindent" },
+    yaml = { "yamlfmt" },
   },
 })
 
 conform.formatters["clang-format"] = {
   prepend_args = { "--style=Google" },
+}
+
+conform.formatters["latexindent"] = {
+  prepend_args = { "--local" },
 }
 
 local format = function()
