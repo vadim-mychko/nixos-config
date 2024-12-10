@@ -400,6 +400,9 @@ require("virt-column").setup({
   virtcolumn = "88",
 })
 
+-- ============================== TODO COMMENTS ===============================
+require("todo-comments").setup({})
+
 -- =================================== REPL ===================================
 vim.g.slime_target = "wezterm"
 vim.g.slime_no_mappings = 1

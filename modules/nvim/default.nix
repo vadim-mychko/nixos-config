@@ -41,6 +41,7 @@ let
       dressing-nvim
       virt-column-nvim
       vim-slime
+      todo-comments-nvim
     ];
 
     configure.customRC = ''
