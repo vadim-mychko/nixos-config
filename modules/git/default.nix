@@ -15,9 +15,7 @@
       interactive.diffFilter = "delta --color-only --diff-so-fancy";
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
-      delta = {
-        navigate = true;
-      };
+      delta.navigate = true;
 
       commit.template = "~/.gitcommit";
     };
