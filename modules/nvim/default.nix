@@ -42,6 +42,7 @@ let
       virt-column-nvim
       vim-slime
       todo-comments-nvim
+      vim-flog
     ];
 
     configure.customRC = ''
