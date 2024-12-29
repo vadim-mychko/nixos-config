@@ -42,8 +42,6 @@ let
       virt-column-nvim
       vim-slime
       todo-comments-nvim
-      vim-flog
-      vim-fugitive
     ];
 
     configure.customRC = ''
