@@ -42,6 +42,7 @@ let
       tomoki1207.pdf
       mechatroner.rainbow-csv
       catppuccin.catppuccin-vsc
+      reditorsupport.r
     ];
   };
 in {
