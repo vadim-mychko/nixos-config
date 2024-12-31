@@ -11,6 +11,36 @@ wezterm.on("gui-startup", function()
   window:gui_window():maximize()
 end)
 
+wezterm.on("smart_workspace_switcher.workspace_switcher.created", function(window, path, label)
+  local workspace_state = resurrect.workspace_state
+
+  workspace_state.restore_workspace(resurrect.load_state(label, "workspace"), {
+    window = window,
+    relative = true,
+    restore_text = true,
+    on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+  })
+end)
+
+wezterm.on("smart_workspace_switcher.workspace_switcher.selected", function(window, path, label)
+  local workspace_state = resurrect.workspace_state
+  resurrect.save_state(workspace_state.get_workspace_state())
+end)
+
+wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
+  local zoomed = ""
+  if tab.active_pane.is_zoomed then
+    zoomed = " "
+  end
+
+  local index = ""
+  if #tabs > 1 then
+    index = string.format("(%d/%d) ", tab.tab_index + 1, #tabs)
+  end
+
+  return zoomed .. index .. tab.active_pane.title
+end)
+
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.window_padding = { bottom = 0 }
