@@ -27,18 +27,24 @@ wezterm.on("smart_workspace_switcher.workspace_switcher.selected", function(wind
   resurrect.save_state(workspace_state.get_workspace_state())
 end)
 
-wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
-  local zoomed = ""
-  if tab.active_pane.is_zoomed then
-    zoomed = " "
+wezterm.on("update-status", function(window, pane)
+  local our_tab = pane:tab()
+  local is_zoomed = false
+  if our_tab ~= nil then
+    for _, pane_attributes in pairs(our_tab:panes_with_info()) do
+      is_zoomed = pane_attributes['is_zoomed'] or is_zoomed
+    end
   end
 
-  local index = ""
-  if #tabs > 1 then
-    index = string.format("(%d/%d) ", tab.tab_index + 1, #tabs)
+  if is_zoomed then
+    window:set_right_status(wezterm.format {
+      { Foreground = { Color = 'white' } },
+      { Text = ' Zoomed         ' },
+    })
+    wezterm.emit("force-tabs-shown", window, pane)
+  else
+    window:set_right_status("")
   end
-
-  return zoomed .. index .. tab.active_pane.title
 end)
 
 config.tab_bar_at_bottom = true
