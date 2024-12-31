@@ -348,7 +348,7 @@ conform.formatters["clang-format"] = {
 }
 
 conform.formatters["latexindent"] = {
-  prepend_args = { "--local", "--cruft=build"},
+  prepend_args = { "--local", "--cruft=build" },
 }
 
 local format = function()
@@ -421,6 +421,23 @@ vim.g.slime_default_config = {
   pane_direction = "right",
 }
 
-vim.keymap.set("n", "<leader>rl", "<Plug>SlimeLineSend", { desc = "[R]un [L]ine"})
-vim.keymap.set("v", "<leader>rl", "<Plug>SlimeRegionSend", { desc = "[R]un [L]ines (visual)"})
-vim.keymap.set("n", "<leader>r", "<Plug>SlimeMotionSend", { desc = "[R]un + motion"})
+vim.keymap.set("n", "<leader>rl", "<Plug>SlimeLineSend", { desc = "[R]un [L]ine" })
+vim.keymap.set("v", "<leader>rl", "<Plug>SlimeRegionSend", { desc = "[R]un [L]ines (visual)" })
+vim.keymap.set("n", "<leader>r", "<Plug>SlimeMotionSend", { desc = "[R]un + motion" })
+
+-- =============================== TEXT OBJECTS ===============================
+require("nvim-treesitter.configs").setup({
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["af"] = "@function.outer",
+      },
+
+      selection_modes = {
+        ['@function.outer'] = 'V',
+      },
+    },
+  }
+})

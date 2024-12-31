@@ -42,6 +42,7 @@ let
       virt-column-nvim
       vim-slime
       todo-comments-nvim
+      nvim-treesitter-textobjects
     ];
 
     configure.customRC = ''
