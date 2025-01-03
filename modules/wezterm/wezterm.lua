@@ -124,6 +124,12 @@ config.keys = {
     mods = "LEADER",
     action = workspace_switcher.switch_workspace(),
   },
+
+  {
+    key = "k",
+    mods = "LEADER",
+    action = wezterm.action.QuitApplication,
+  },
 }
 
 return config
