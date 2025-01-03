@@ -6,6 +6,13 @@ local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/s
 
 resurrect.periodic_save()
 
+resurrect.set_encryption({
+  enable = true,
+  method = "age",
+  private_key = wezterm.home_dir .. ".age/resurrect.txt",
+  public_key = "age10dep9zw3tntjtpdu02cv80ug3sjchmt48f8vkexgj2wz4vs9fvxss4kppt",
+})
+
 wezterm.on("gui-startup", function()
   local _, _, window = mux.spawn_window {}
   window:gui_window():maximize()
@@ -97,9 +104,9 @@ config.keys = {
     mods = "LEADER",
     action = wezterm.action_callback(function(win, pane)
       resurrect.fuzzy_load(win, pane, function(id, label)
-        local type = string.match(id, "^([^/]+)") -- match before '/'
-        id = string.match(id, "([^/]+)$")         -- match after '/'
-        id = string.match(id, "(.+)%..+$")        -- remove file extention
+        local type = string.match(id, "^([^/]+)")
+        id = string.match(id, "([^/]+)$")
+        id = string.match(id, "(.+)%..+$")
         local opts = {
           relative = true,
           restore_text = true,
