@@ -6,13 +6,6 @@ local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/s
 
 resurrect.periodic_save()
 
-resurrect.set_encryption({
-  enable = true,
-  method = "age",
-  private_key = wezterm.home_dir .. ".age/resurrect.txt",
-  public_key = "age10dep9zw3tntjtpdu02cv80ug3sjchmt48f8vkexgj2wz4vs9fvxss4kppt",
-})
-
 wezterm.on("gui-startup", function()
   local _, _, window = mux.spawn_window {}
   window:gui_window():maximize()

@@ -37,7 +37,6 @@
     fastfetch
     calibre
     zathura
-    age
     gnomeExtensions.appindicator
   ];
 
