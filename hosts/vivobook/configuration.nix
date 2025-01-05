@@ -37,6 +37,7 @@
     fastfetch
     calibre
     zathura
+    inkscape
     gnomeExtensions.appindicator
   ];
 
