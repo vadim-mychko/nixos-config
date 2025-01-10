@@ -7,6 +7,5 @@
     ./zsh
     ./wezterm
     ./vscode
-    ./rstudio
   ];
 }
