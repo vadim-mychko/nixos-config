@@ -7,6 +7,10 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    python = pkgs.python312.withPackages (ps: with ps; [
+      numpy
+      matplotlib
+    ]);
   in {
     nixosConfigurations = {
       vivobook = nixpkgs.lib.nixosSystem {
@@ -17,8 +21,8 @@
     };
 
     devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [
-        python312
+      packages = [
+        python
       ];
     };
   };
