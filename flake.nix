@@ -10,6 +10,7 @@
     python = pkgs.python312.withPackages (ps: with ps; [
       numpy
       matplotlib
+      scipy
     ]);
   in {
     nixosConfigurations = {
