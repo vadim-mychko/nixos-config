@@ -8,6 +8,7 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     python = pkgs.python312.withPackages (ps: with ps; [
+      ipykernel
       numpy
       matplotlib
       scipy
