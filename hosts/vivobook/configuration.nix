@@ -38,6 +38,7 @@
     calibre
     zathura
     inkscape
+    ocrmypdf
     gnomeExtensions.appindicator
   ];
 
