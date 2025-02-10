@@ -36,9 +36,7 @@
     vlc
     fastfetch
     calibre
-    zathura
     inkscape
-    ocrmypdf
     gnomeExtensions.appindicator
   ];
 
