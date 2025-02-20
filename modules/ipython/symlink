@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+SCRIPT_PATH=$(realpath "$0")
+SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
+IPYTHON_CONFIG_DIR="$HOME/.ipython/profile_default"
+
+mkdir -pv "$IPYTHON_CONFIG_DIR"
+ln -sv "$SCRIPT_DIR/ipython_config.py" "$IPYTHON_CONFIG_DIR"
+ln -sv "$SCRIPT_DIR/ipython_kernel_config.py" "$IPYTHON_CONFIG_DIR"
