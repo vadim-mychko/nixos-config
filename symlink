@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+SCRIPT_PATH=$(realpath "$0")
+SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
+
+"$SCRIPT_DIR/modules/bat/symlink"
+"$SCRIPT_DIR/modules/git/symlink"
+"$SCRIPT_DIR/modules/nvim/symlink"
+"$SCRIPT_DIR/modules/wezterm/symlink"
