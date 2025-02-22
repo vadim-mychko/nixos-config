@@ -24,7 +24,6 @@
     tlrc
     eza
     wl-clipboard
-    qpdfview
     zip
     unzip
     texliveFull
