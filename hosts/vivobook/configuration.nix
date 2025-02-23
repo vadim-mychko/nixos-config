@@ -37,6 +37,7 @@
     calibre
     inkscape
     gnomeExtensions.appindicator
+    zathura
   ];
 
   programs.direnv = {
