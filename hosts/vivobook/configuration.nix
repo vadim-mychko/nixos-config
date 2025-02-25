@@ -39,6 +39,7 @@
     gnomeExtensions.appindicator
     zathura
     yt-dlp
+    ffmpeg
   ];
 
   programs.direnv = {
