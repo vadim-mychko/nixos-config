@@ -38,6 +38,7 @@
     inkscape
     gnomeExtensions.appindicator
     zathura
+    yt-dlp
   ];
 
   programs.direnv = {
