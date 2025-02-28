@@ -40,6 +40,7 @@
     zathura
     yt-dlp
     ffmpeg
+    protonvpn-gui
   ];
 
   programs.direnv = {
