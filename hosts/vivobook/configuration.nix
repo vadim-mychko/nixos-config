@@ -21,7 +21,6 @@
     lazygit
     htop
     btop
-    tlrc
     eza
     wl-clipboard
     zip
@@ -33,13 +32,8 @@
     zotero
     poppler_utils
     vlc
-    fastfetch
     calibre
-    inkscape
     gnomeExtensions.appindicator
-    zathura
-    yt-dlp
-    ffmpeg
   ];
 
   programs.thunderbird.enable = true;
