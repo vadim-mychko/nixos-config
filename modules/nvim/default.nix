@@ -59,9 +59,6 @@ in {
     basedpyright
     ruff
     clang-tools
-    ltex-ls
-    vale
-    typstyle
     yamlfmt
     yaml-language-server
   ];

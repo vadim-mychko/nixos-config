@@ -215,29 +215,8 @@ lspconfig.basedpyright.setup({
   },
 })
 
-lspconfig.ltex.setup({
-  capabilities = capabilities,
-  settings = {
-    ltex = {
-      language = "en",
-      additionalRules = {
-        languageModel = "~/ngrams/",
-      },
-    },
-  },
-})
-
 lspconfig.clangd.setup({
   capabilities = capabilities,
-})
-
-lspconfig.r_language_server.setup({
-  capabilities = capabilities,
-})
-
-lspconfig.tinymist.setup({
-  capabilities = capabilities,
-  single_file_support = true,
 })
 
 lspconfig.yamlls.setup({
@@ -319,7 +298,6 @@ local lint = require("lint")
 lint.linters_by_ft = {
   python = { "ruff" },
   nix = { "nix" },
-  markdown = { "vale" },
 }
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
@@ -337,7 +315,6 @@ conform.setup({
     python = { "ruff_organize_imports", "ruff_format" },
     c = { "clang-format" },
     cpp = { "clang-format" },
-    typst = { "typstyle" },
     tex = { "latexindent" },
     yaml = { "yamlfmt" },
   },
