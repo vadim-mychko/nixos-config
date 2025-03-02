@@ -1,6 +1,9 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, ... }:
 
-{
+let
+  system = pkgs.stdenv.hostPlatform.system;
+  pkgs-wezterm = inputs.nixpkgs-wezterm.legacyPackages.${system};
+in {
   imports = [
     ./hardware-configuration.nix
     ../../modules
@@ -34,6 +37,7 @@
     vlc
     calibre
     gnomeExtensions.appindicator
+    pkgs-wezterm.wezterm
   ];
 
   programs.direnv = {

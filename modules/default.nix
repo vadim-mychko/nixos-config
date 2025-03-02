@@ -5,7 +5,6 @@
     ./git
     ./nvim
     ./zsh
-    ./wezterm
     ./vscode
   ];
 }
