@@ -1,13 +1,6 @@
 { pkgs, ... }:
 
 let
-  quarto = pkgs.vscode-utils.extensionFromVscodeMarketplace {
-    name = "quarto";
-    publisher = "quarto";
-    version = "1.116.0";
-    sha256 = "sha256-AwxBN4bu6EfCnozoDcM9BG8NGuG/1iaas7feLwgRC+w=";
-  };
-
   python-indent = pkgs.vscode-utils.extensionFromVscodeMarketplace {
     name = "vsc-python-indent";
     publisher = "KevinRose";
@@ -24,7 +17,6 @@ let
 
   vscode = pkgs.vscode-with-extensions.override {
     vscodeExtensions = with pkgs.vscode-extensions; [
-      quarto
       python-indent
       edit-csv
       mkhl.direnv
@@ -33,7 +25,6 @@ let
       ms-toolsai.jupyter-keymap
       ms-toolsai.jupyter-renderers
       ms-toolsai.datawrangler
-      valentjn.vscode-ltex
       ms-python.python
       ms-python.vscode-pylance
       njpwerner.autodocstring
@@ -42,7 +33,6 @@ let
       tomoki1207.pdf
       mechatroner.rainbow-csv
       catppuccin.catppuccin-vsc
-      reditorsupport.r
     ];
   };
 in {
