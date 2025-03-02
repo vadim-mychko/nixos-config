@@ -75,7 +75,6 @@ in {
 
   # ================================ PIPEWIRE =================================
 
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -124,7 +123,7 @@ in {
     powerManagement.finegrained = true;
     open = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
     prime = {
       offload.enable = true;
       offload.enableOffloadCmd = true;
