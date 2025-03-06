@@ -38,8 +38,6 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 15
 vim.opt.hlsearch = true
-vim.opt.spell = true
-vim.opt.spelllang = { "en" }
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
