@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+SCRIPT_PATH=$(realpath "$0")
+SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
+CONFIG_DIR="${XDG_CONFIG_HOME:-"$HOME/.config"}"
+ALACRITTY_CONFIG_DIR="$CONFIG_DIR/alacritty"
+
+mkdir -pv "$ALACRITTY_CONFIG_DIR"
+ln -sv "$SCRIPT_DIR/alacritty.toml" "$ALACRITTY_CONFIG_DIR"
