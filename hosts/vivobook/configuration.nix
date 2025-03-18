@@ -15,6 +15,7 @@ in {
     firefox
     telegram-desktop
     zoxide
+    sshfs
     fzf
     fd
     jq
