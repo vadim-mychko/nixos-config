@@ -37,6 +37,7 @@ in {
     poppler_utils
     vlc
     calibre
+    alacritty
     gnomeExtensions.appindicator
     pkgs-wezterm.wezterm
   ];
