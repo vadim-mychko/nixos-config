@@ -38,6 +38,7 @@ in {
     vlc
     calibre
     alacritty
+    ansifilter
     gnomeExtensions.appindicator
     pkgs-wezterm.wezterm
   ];
