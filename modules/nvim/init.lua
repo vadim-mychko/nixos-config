@@ -409,11 +409,13 @@ require("nvim-treesitter.configs").setup({
       keymaps = {
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
       },
 
       selection_modes = {
         ["@function.outer"] = "V",
         ["@function.inner"] = "V",
+        ["@class.outer"] = "V",
       },
     },
   }
