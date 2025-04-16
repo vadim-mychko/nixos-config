@@ -6,5 +6,6 @@
     ./nvim
     ./zsh
     ./vscode
+    ./tmux
   ];
 }
