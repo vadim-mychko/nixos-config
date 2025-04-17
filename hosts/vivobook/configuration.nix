@@ -39,6 +39,9 @@ in {
     calibre
     alacritty
     ansifilter
+    audacity
+    yt-dlp
+    ffmpeg
     gnomeExtensions.appindicator
     pkgs-wezterm.wezterm
   ];
