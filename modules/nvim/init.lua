@@ -315,6 +315,7 @@ conform.setup({
     cpp = { "clang-format" },
     tex = { "latexindent" },
     yaml = { "yamlfmt" },
+    json = { "deno_fmt" },
   },
 })
 

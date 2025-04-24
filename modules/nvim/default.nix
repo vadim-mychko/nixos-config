@@ -61,5 +61,6 @@ in {
     clang-tools
     yamlfmt
     yaml-language-server
+    deno
   ];
 }
