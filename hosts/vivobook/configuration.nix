@@ -42,6 +42,7 @@ in {
     yt-dlp
     ffmpeg
     imagemagick
+    gimp
     gnomeExtensions.appindicator
     pkgs-wezterm.wezterm
   ];
