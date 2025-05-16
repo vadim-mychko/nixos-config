@@ -41,6 +41,7 @@ in {
     ansifilter
     yt-dlp
     ffmpeg
+    imagemagick
     gnomeExtensions.appindicator
     pkgs-wezterm.wezterm
   ];
