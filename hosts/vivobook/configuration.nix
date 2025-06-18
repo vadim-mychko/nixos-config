@@ -130,7 +130,7 @@ in {
     powerManagement.finegrained = true;
     open = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
     prime = {
       offload.enable = true;
       offload.enableOffloadCmd = true;
