@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-wezterm.url = "github:nixos/nixpkgs/957d95fc8b9bf1eb60d43f8d2eba352b71bbf2be";
   };
 
