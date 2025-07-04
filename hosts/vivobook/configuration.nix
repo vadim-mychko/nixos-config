@@ -45,6 +45,7 @@ in {
     gimp
     gnomeExtensions.appindicator
     pkgs-wezterm.wezterm
+    age
   ];
 
   programs.direnv = {

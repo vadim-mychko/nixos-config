@@ -4,7 +4,14 @@ local mux = wezterm.mux
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 
-resurrect.periodic_save()
+resurrect.state_manager.set_encryption({
+  enable = true,
+  method = "age",
+  private_key = os.getenv("HOME") .. "/.config/wezterm/key.txt",
+  public_key = "age12xzf07anhs56sucr44mcv5rpqke09a3dnpexmcjcr8hxny4lyygq3mltjd",
+})
+
+resurrect.state_manager.periodic_save()
 
 wezterm.on("gui-startup", function()
   local _, _, window = mux.spawn_window {}
@@ -14,7 +21,7 @@ end)
 wezterm.on("smart_workspace_switcher.workspace_switcher.created", function(window, path, label)
   local workspace_state = resurrect.workspace_state
 
-  workspace_state.restore_workspace(resurrect.load_state(label, "workspace"), {
+  workspace_state.restore_workspace(resurrect.state_manager.load_state(label, "workspace"), {
     window = window,
     relative = true,
     restore_text = true,
@@ -24,7 +31,7 @@ end)
 
 wezterm.on("smart_workspace_switcher.workspace_switcher.selected", function(window, path, label)
   local workspace_state = resurrect.workspace_state
-  resurrect.save_state(workspace_state.get_workspace_state())
+  resurrect.state_manager.save_state(workspace_state.get_workspace_state())
 end)
 
 wezterm.on("update-status", function(window, pane)
@@ -86,7 +93,7 @@ config.keys = {
     key = "w",
     mods = "LEADER",
     action = wezterm.action_callback(function(win, pane)
-      resurrect.save_state(resurrect.workspace_state.get_workspace_state())
+      resurrect.state_manager.save_state(resurrect.workspace_state.get_workspace_state())
     end),
   },
 
